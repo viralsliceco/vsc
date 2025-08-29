@@ -1,0 +1,129 @@
+import { Button } from '@workspace/ui/components/button'
+import { Anton } from 'next/font/google'
+
+const fontAnton = Anton({
+    subsets: ["latin"],
+    variable: "--font-anton",
+    weight: "400",
+})
+
+
+export default function TestimonialsSection() {
+    const testimonials = [
+        {
+            name: 'Brian Mark',
+            rating: 5,
+            thumbnail: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop',
+            videoId: 1
+        },
+        {
+            name: 'Kristen Stampini',
+            rating: 5,
+            thumbnail: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=2070&auto=format&fit=crop',
+            videoId: 2
+        },
+        {
+            name: 'Eric',
+            rating: 5,
+            thumbnail: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2187&auto=format&fit=crop',
+            videoId: 3
+        },
+        {
+            name: 'Michael Averett',
+            rating: 5,
+            thumbnail: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2187&auto=format&fit=crop',
+            videoId: 4
+        },
+        {
+            name: 'Arbor North',
+            rating: 5,
+            thumbnail: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop',
+            videoId: 5
+        },
+        {
+            name: 'Chrissy',
+            rating: 5,
+            thumbnail: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=2188&auto=format&fit=crop',
+            videoId: 6
+        },
+        {
+            name: 'Monica Baker',
+            rating: 5,
+            thumbnail: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=2071&auto=format&fit=crop',
+            videoId: 7
+        }
+    ]
+
+    const renderStars = (rating: number) => {
+        return Array.from({ length: 5 }, (_, index) => (
+            <span
+                key={index}
+                className={index < rating ? 'text-yellow-400' : 'text-gray-600'}
+            >
+                ★
+            </span>
+        ))
+    }
+
+    return (
+        <section className="py-20 bg-black">
+            <div className="container mx-auto px-4">
+                {/* Heading */}
+                <div className="text-center mb-16">
+                    <h2 className={`text-4xl md:text-6xl font-bold text-white leading-tight uppercase tracking-tight mb-6 ${fontAnton.className}`}>
+                        SEE WHAT EVERYONE IS
+                        <br />
+                        SAYING ABOUT <span className="text-primary">VSC</span>
+                    </h2>
+                </div>
+
+                {/* Testimonials Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                    {testimonials.slice(0, 6).map((testimonial) => (
+                        <div key={testimonial.videoId} className="group cursor-pointer">
+                            <div className="relative overflow-hidden rounded-lg mb-4">
+                                <img
+                                    src={testimonial.thumbnail}
+                                    alt={`${testimonial.name} testimonial`}
+                                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
+
+                                {/* Play button overlay */}
+                                <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                                        <div className="w-0 h-0 border-l-[12px] border-l-white border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent ml-1"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            {/* Rating */}
+                            <div className="flex justify-center mb-2">
+                                <div className="flex">
+                                    {renderStars(testimonial.rating)}
+                                </div>
+                            </div>
+
+                            {/* Name */}
+                            <div className="text-center">
+                                <h4 className="text-white font-bold text-lg">
+                                    -{testimonial.name}
+                                </h4>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <Button
+                        size="lg"
+                        className="bg-primary hover:bg-primary/80 text-white px-8 py-4 text-lg font-semibold rounded-none"
+                    >
+                        Work With Us
+                    </Button>
+                </div>
+            </div>
+        </section>
+    )
+}
