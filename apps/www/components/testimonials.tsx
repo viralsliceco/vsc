@@ -70,18 +70,33 @@ export default function TestimonialsSection() {
             <div className="container mx-auto px-4">
                 {/* Heading */}
                 <div className="text-center mb-16">
-                    <h2 className={`text-4xl md:text-6xl font-bold text-white leading-tight uppercase tracking-tight mb-6 ${fontAnton.className}`}>
-                        SEE WHAT EVERYONE IS
-                        <br />
-                        SAYING ABOUT <span className="text-primary">VSC</span>
-                    </h2>
+                    <h3 className={`${fontAnton.className} text-4xl sm:text-5xl lg:text-6xl uppercase text-center text-text-primary mb-20 leading-tight`}>
+                        See what everyone is saying about{' '}
+                        <span className="relative text-primary inline-block">
+                            VSC
+                            <svg
+                                className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 w-[105%] h-auto"
+                                viewBox="0 0 223 13"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                preserveAspectRatio="none"
+                            >
+                                <path
+                                    d="M1.38281 10.9785C42.2737 4.19561 142.923 -6.21633 221.053 10.9785"
+                                    stroke="currentColor"
+                                    strokeWidth="3"
+                                    strokeLinecap="round"
+                                />
+                            </svg>
+                        </span>
+                    </h3>
                 </div>
 
                 {/* Testimonials Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                     {testimonials.slice(0, 6).map((testimonial) => (
                         <div key={testimonial.videoId} className="group cursor-pointer">
-                            <div className="relative overflow-hidden rounded-lg mb-4">
+                            <div className="relative overflow-hidden rounded-2xl mb-4">
                                 <img
                                     src={testimonial.thumbnail}
                                     alt={`${testimonial.name} testimonial`}
@@ -118,7 +133,7 @@ export default function TestimonialsSection() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <Button
                         size="lg"
-                        className="bg-primary hover:bg-primary/80 text-white px-8 py-4 text-lg font-semibold rounded-none"
+                        className="rounded-2xl"
                     >
                         Work With Us
                     </Button>

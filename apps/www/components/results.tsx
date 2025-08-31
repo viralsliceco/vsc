@@ -1,13 +1,5 @@
 "use client"
-import { Anton } from 'next/font/google'
 import Carousel from './carousel'
-
-const fontAnton = Anton({
-    subsets: ["latin"],
-    variable: "--font-anton",
-    weight: "400",
-})
-
 interface VideoItem {
     id: number
     views: string
@@ -68,17 +60,8 @@ export default function ResultsSection() {
     ]
 
     return (
-        <section className="py-20 bg-black">
-            <div className="w-full max-w-7xl mx-auto px-2 sm:px-4">
-                {/* Heading */}
-                <div className="text-left mb-16">
-                    <h2 className={`text-4xl md:text-6xl font-bold text-white leading-tight uppercase tracking-tight mb-6 ${fontAnton.className}`}>
-                        WE HAVE <span className="text-primary">VIRALITY</span> DOWN TO A
-                        <br />
-                        SCIENCE...
-                    </h2>
-                </div>
-
+        <section className="py-20">
+            <div className="w-full">
                 {/* Carousel */}
                 <Carousel items={videos} className="w-full" />
             </div>

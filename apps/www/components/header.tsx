@@ -16,7 +16,7 @@ export default function Header() {
     ]
 
     return (
-        <header className="top-0 left-0 right-0 z-50 backdrop-blur-xs">
+        <header className="top-0 left-0 right-0 z-50">
             <div className="px-4 py-4 flex items-center justify-between">
                 {/* Logo */}
                 <div className="flex items-center gap-2">

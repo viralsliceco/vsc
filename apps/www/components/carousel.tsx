@@ -2,6 +2,14 @@
 import { motion, useMotionValue, useSpring } from 'framer-motion'
 import { useRef, useEffect, useState } from 'react'
 
+import { Anton } from 'next/font/google';
+
+const fontAnton = Anton({
+    subsets: ["latin"],
+    variable: "--font-anton",
+    weight: "400",
+})
+
 interface CarouselItem {
     id: number
     views: string
@@ -81,7 +89,7 @@ export default function Carousel({ items, className = "" }: CarouselProps) {
             >
                 {duplicatedItems.map((item, index) => (
                     <div key={`${item.id}-${index}`} className="group cursor-pointer flex-shrink-0">
-                        <div className="relative overflow-hidden rounded-lg w-80 h-96">
+                        <div className="relative overflow-hidden rounded-2xl w-90 h-160">
                             <img
                                 src={item.thumbnail}
                                 alt={item.title}
@@ -97,8 +105,8 @@ export default function Carousel({ items, className = "" }: CarouselProps) {
 
                             {/* View count badge */}
                             <div className="absolute bottom-4 left-4">
-                                <div className="bg-black/80 backdrop-blur-sm px-4 py-2 rounded">
-                                    <div className="text-white font-bold text-3xl">{item.views}</div>
+                                <div className={`${fontAnton.className} backdrop-blur-sm px-4 py-2 rounded bg-black/80`}>
+                                    <div className="text-white text-3xl">{item.views}</div>
                                     <div className="text-gray-300 text-base">Views</div>
                                 </div>
                             </div>
