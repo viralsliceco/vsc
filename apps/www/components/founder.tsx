@@ -43,7 +43,6 @@ const Founder = () => {
                     <div>
                         <h2 className={`${fontAnton.className} text-[47px] leading-[1.1] uppercase mb-6`}>
                             THE BEST ATTENTION
-                            <br />
                             HACKERS IN THE WORLD.
                         </h2>
 

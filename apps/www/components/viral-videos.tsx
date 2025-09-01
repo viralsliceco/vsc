@@ -4,32 +4,32 @@ import { cn } from "@workspace/ui/lib/utils";
 const videos = [
     {
         gif: "https://viralish.com/wp-content/uploads/2024/09/LIT-Final-low.gif",
-        popupLink: "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI1NzIiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D",
+        // popupLink: "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI1NzIiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D",
         className: "hidden md:block",
         transform: "md:rotate-[-4deg] md:scale-90 md:translate-y-4",
         zIndex: 'z-0'
     },
     {
         gif: "https://viralish.com/wp-content/uploads/2024/09/Snapinsta.app_video_E6486A1750BE76AE648C9DA0869AB781_video_dashinit-low.gif",
-        popupLink: "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI1NzMiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D",
+        // popupLink: "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI1NzMiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D",
         transform: "md:scale-95",
         zIndex: 'z-10'
     },
     {
         gif: "https://viralish.com/wp-content/uploads/2024/09/30-second-car-shower-low.gif",
-        popupLink: "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI1NTAiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D",
+        // popupLink: "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI1NTAiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D",
         transform: "md:scale-100 md:-translate-y-6",
         zIndex: 'z-20'
     },
     {
         gif: "https://viralish.com/wp-content/uploads/2024/09/60s-AI-voice-Starburst-Drink-low.gif",
-        popupLink: "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI1NzAiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D",
+        // popupLink: "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI1NzAiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D",
         transform: "md:scale-95",
         zIndex: 'z-10'
     },
     {
         gif: "https://viralish.com/wp-content/uploads/2024/09/Snapinsta.app_video_4C4C3646368EE82C8E8E8F9F2348DF93_video_dashinit-low.gif",
-        popupLink: "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI1NzEiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D",
+        // popupLink: "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI1NzEiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D",
         className: "hidden md:block",
         transform: "md:rotate-[4deg] md:scale-90 md:translate-y-4",
         zIndex: 'z-0'
@@ -39,14 +39,14 @@ const videos = [
 const ViralVideosShowcase = () => {
     return (
 
-        <div className="bg-transparent -mt-10 md:-mt-32 lg:-mt-48 relative pt-10 md:pt-20 pb-10 md:pb-24 overflow-hidden">
+        <div className="bg-transparent -mt-14 md:-mt-40 relative pt-20 md:pt-24 pb-10 md:pb-24 overflow-hidden">
             <div className="relative">
                 {/* Mobile: Show only the main video, horizontally scrollable for all videos */}
                 <div className="flex md:hidden overflow-x-auto gap-4 px-4 pb-2 snap-x snap-mandatory">
                     {videos.map((video, index) => (
                         <a
                             key={index}
-                            href={video.popupLink}
+                            // href={video.popuLink}
                             className={cn(
                                 "group relative flex-shrink-0 w-4/5 max-w-xs snap-center transition-all duration-300 ease-in-out hover:z-30 hover:!scale-105",
                                 video.zIndex
@@ -71,7 +71,7 @@ const ViralVideosShowcase = () => {
                     {videos.map((video, index) => (
                         <a
                             key={index}
-                            href={video.popupLink}
+                            // href={video.popupLink}
                             className={cn(
                                 "group relative w-2/5 md:w-1/4 lg:w-1/5 shrink-0 transition-all duration-300 ease-in-out hover:z-30 hover:!scale-105",
                                 video.className,

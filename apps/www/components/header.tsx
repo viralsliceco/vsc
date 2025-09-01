@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Button } from '@workspace/ui/components/button'
+import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 
@@ -12,19 +13,20 @@ export default function Header() {
         { label: 'Home', href: '/' },
         { label: 'Creators', href: '/creators' },
         { label: 'Brands', href: '/brands' },
-        { label: 'Speaking', href: '/speaking' }
     ]
 
     return (
         <header className="top-0 left-0 right-0 z-50">
             <div className="px-4 py-4 flex items-center justify-between">
                 {/* Logo */}
-                <div className="flex items-center gap-2">
-                    <Image src="/brand/vsc-logo.svg" alt="Viralish" width={40} height={20} />
-                    <div className="text-xl font-medium">
-                        <span className="">Viral Slice Co.</span>
+                <Link href="/" prefetch>
+                    <div className="flex items-center gap-2">
+                        <Image src="/brand/vsc-logo.svg" alt="Viralish" width={34} height={20} />
+                        <div className="text-xl font-medium">
+                            <span className="">Viral Slice Company</span>
+                        </div>
                     </div>
-                </div>
+                </Link>
 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex space-x-8">

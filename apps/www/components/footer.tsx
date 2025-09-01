@@ -1,32 +1,33 @@
 import Image from "next/image"
+import { Wordmark } from "./ui/wordmark"
 
 export default function Footer() {
     const links = [
         { label: 'Home', href: '#' },
         { label: 'Creators', href: '#' },
         { label: 'Brands', href: '#' },
-        { label: 'Speaking', href: '#' }
+        // { label: 'Speaking', href: '#' }
     ]
 
     const socialLinks = [
         {
             name: 'Facebook',
-            href: '#',
+            // href: '#',
             icon: 'https://cdn.brandfetch.io/idpKX136kp/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B',
         },
         {
             name: 'Instagram',
-            href: '#',
+            // href: '#',
             icon: 'https://cdn.brandfetch.io/ido5G85nya/theme/light/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B',
         },
         {
             name: 'TikTok',
-            href: '#',
+            // href: '#',
             icon: 'https://cdn.brandfetch.io/id-0D6OFrq/theme/light/id0W0E4G_0.svg?c=1dxbfHSJFAPEGdCLU4o5B',
         },
         {
             name: 'YouTube',
-            href: '#',
+            // href: '#',
             icon: 'https://cdn.brandfetch.io/idVfYwcuQz/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B',
         }
     ]
@@ -39,6 +40,7 @@ export default function Footer() {
     ]
 
     return (
+		<>
         <footer className="border-t border-zinc-900">
             <div className="container mx-auto px-4 py-12">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto items-center ">
@@ -105,5 +107,7 @@ export default function Footer() {
                 </div>
             </div>
         </footer>
+		<Wordmark />
+		</>
     )
 }

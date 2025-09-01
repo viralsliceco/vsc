@@ -1,8 +1,5 @@
 import { Button } from '@workspace/ui/components/button'
 import { Anton } from 'next/font/google'
-import Header from './header'
-import Image from 'next/image'
-import ViralVideosShowcase from './viral-videos'
 
 const fontAnton = Anton({
     subsets: ["latin"],
@@ -50,7 +47,7 @@ export default function HeroSection() {
                             <path
                                 d="M1.38281 10.9785C42.2737 4.19561 142.923 -6.21633 221.053 10.9785"
                                 stroke="currentColor"
-                                strokeWidth="3"
+                                strokeWidth="10"
                                 strokeLinecap="round"
                             />
                         </svg>

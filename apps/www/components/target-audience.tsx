@@ -1,4 +1,4 @@
-import React from 'react';
+import { Button } from "@workspace/ui/components/button";
 
 const TargetAudience = () => {
     return (
@@ -12,7 +12,7 @@ const TargetAudience = () => {
                             muted
                             loop
                             playsInline
-                            poster="https://viralish.com/wp-content/uploads/2024/09/Screen-Shot-2024-09-02-at-12.00.41-PM.png"
+                            poster="https://viralish.com/wp-content/uploads/2024/09/60s-AI-voice-Starburst-Drink-low.gif"
                             className="absolute top-0 left-0 w-full h-full object-cover z-0"
                         >
                         </video>
@@ -24,12 +24,11 @@ const TargetAudience = () => {
                             <p className="text-md text-text-secondary max-w-md">
                                 We help motivated <b className="font-bold text-text-primary">Entrepreneurs</b> make viral videos.
                             </p>
-                            <a
-                                href=""
+                            <Button
                                 className="inline-flex items-center justify-center rounded-2xl bg-primary px-8 py-4 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/90"
                             >
                                 Become A VSC Entrepreneur
-                            </a>
+                            </Button>
                         </div>
                     </div>
 
@@ -40,7 +39,7 @@ const TargetAudience = () => {
                             muted
                             loop
                             playsInline
-                            poster="https://viralish.com/wp-content/uploads/2024/09/Screen-Shot-2024-09-02-at-12.01.21-PM.png"
+                            poster="https://viralish.com/wp-content/uploads/2024/09/Snapinsta.app_video_4C4C3646368EE82C8E8E8F9F2348DF93_video_dashinit-low.gif"
                             className="absolute top-0 left-0 w-full h-full object-cover z-0"
                         >
                         </video>
@@ -52,12 +51,11 @@ const TargetAudience = () => {
                             <p className="text-md text-text-secondary max-w-md">
                                 We integrate <b className="font-bold text-text-primary">Big Brands</b> into cultural relevance at scale.
                             </p>
-                            <a
-                                href="https://viralish.com/viralish-for-brands/"
+                            <Button
                                 className="inline-flex items-center justify-center rounded-2xl bg-primary px-8 py-4 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/90"
                             >
                                 Work With VSC
-                            </a>
+                            </Button>
                         </div>
                     </div>
                 </div>

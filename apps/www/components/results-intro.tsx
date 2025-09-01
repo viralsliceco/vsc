@@ -23,14 +23,14 @@ const ResultsIntroSection = () => {
                         </h2>
                     </div>
                     {/* Right Column: Button */}
-                    <div className="flex w-full shrink-0 justify-center lg:w-auto lg:justify-end">
+                    {/* <div className="flex w-full shrink-0 justify-center lg:w-auto lg:justify-end">
                         <a
                             href="#entrepreneur"
                             className="inline-block whitespace-nowrap rounded-2xl bg-primary px-[50px] py-5 font-body text-base font-medium uppercase text-primary-foreground transition-colors duration-300 hover:bg-primary/90"
                         >
                             Work With Us
                         </a>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>

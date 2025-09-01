@@ -7,7 +7,7 @@ const fontAnton = Anton({
     weight: "400",
 })
 
-const ServicesSection = () => {
+export default function ServicesSection() {
     return (
         <section className="bg-background-primary">
             <div className="flex flex-col items-center mx-auto justify-center max-w-[1200px] px-5 md:px-10">
@@ -36,5 +36,3 @@ const ServicesSection = () => {
         </section>
     );
 };
-
-export default ServicesSection;
