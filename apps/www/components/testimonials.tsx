@@ -1,5 +1,6 @@
 import { Button } from '@workspace/ui/components/button'
 import { Anton } from 'next/font/google'
+import Image from 'next/image'
 
 const fontAnton = Anton({
     subsets: ["latin"],
@@ -13,43 +14,43 @@ export default function TestimonialsSection() {
         {
             name: 'Brian Mark',
             rating: 5,
-            thumbnail: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop',
+            thumbnail: '/reviews/image.png',
             videoId: 1
         },
         {
             name: 'Kristen Stampini',
             rating: 5,
-            thumbnail: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=2070&auto=format&fit=crop',
+            thumbnail: '/reviews/image.png',
             videoId: 2
         },
         {
             name: 'Eric',
             rating: 5,
-            thumbnail: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2187&auto=format&fit=crop',
+            thumbnail: '/reviews/image.png',
             videoId: 3
         },
         {
             name: 'Michael Averett',
             rating: 5,
-            thumbnail: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2187&auto=format&fit=crop',
+            thumbnail: '/reviews/image.png',
             videoId: 4
         },
         {
             name: 'Arbor North',
             rating: 5,
-            thumbnail: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop',
+            thumbnail: '/reviews/image.png',
             videoId: 5
         },
         {
             name: 'Chrissy',
             rating: 5,
-            thumbnail: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=2188&auto=format&fit=crop',
+            thumbnail: '/reviews/image.png',
             videoId: 6
         },
         {
             name: 'Monica Baker',
             rating: 5,
-            thumbnail: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=2071&auto=format&fit=crop',
+            thumbnail: '/reviews/image.png',
             videoId: 7
         }
     ]
@@ -97,9 +98,11 @@ export default function TestimonialsSection() {
                     {testimonials.slice(0, 6).map((testimonial) => (
                         <div key={testimonial.videoId} className="group cursor-pointer">
                             <div className="relative overflow-hidden rounded-2xl mb-4">
-                                <img
+                                <Image
                                     src={testimonial.thumbnail}
                                     alt={`${testimonial.name} testimonial`}
+                                    width={360}
+                                    height={640}
                                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                                 />
 

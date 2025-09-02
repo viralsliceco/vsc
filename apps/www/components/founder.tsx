@@ -50,10 +50,10 @@ const Founder = () => {
                                 At <strong className="text-white font-semibold">Viral Slice Co.</strong>, we are a dedicated early-stage media and content management team based in Columbus, Ohio. Our mission is simple: create high-performing content that captures attention, drives engagement, and builds communities online.
                             </p>
                             <p>
-                                With <strong className="text-white font-semibold">50M+ monthly views</strong>, <strong className="text-white font-semibold">10M+ followers</strong>, and over <strong className="text-white font-semibold">2B+ minutes viewed</strong> across client projects and personal brands, we've proven that our approach works.
+                                With <strong className="text-white font-semibold">50M+ monthly views</strong>, <strong className="text-white font-semibold">10M+ followers</strong>, and over <strong className="text-white font-semibold">2B+ minutes viewed</strong> across client projects and personal brands,{" we've proven that our approach works."}
                             </p>
                             <p>
-                                Whether you're a brand, creator, or entrepreneur, we specialize in crafting viral videos, social campaigns, and storytelling strategies that maximize reach on platforms like TikTok, Instagram Reels, and YouTube Shorts.
+                                {"Whether you're a brand, creator, or entrepreneur, we specialize in crafting viral videos, social campaigns storytelling strategies that maximize reach on platforms like TikTok, Instagram Reels, and YouTube Shorts."}
                             </p>
                             <p>
                                 Unlike large agencies, our Columbus-based team is hands-on and agile. We partner closely with you to produce content that not only looks great but is optimized for discoverability, shares, and conversions.

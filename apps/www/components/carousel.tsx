@@ -3,6 +3,7 @@ import { motion, useMotionValue, useSpring } from 'framer-motion'
 import { useRef, useEffect, useState } from 'react'
 
 import { Anton } from 'next/font/google';
+import Image from 'next/image';
 
 const fontAnton = Anton({
     subsets: ["latin"],
@@ -24,7 +25,7 @@ interface CarouselProps {
 
 export default function Carousel({ items, className = "" }: CarouselProps) {
     const containerRef = useRef<HTMLDivElement>(null)
-    const [containerWidth, setContainerWidth] = useState(0)
+    // const [containerWidth, setContainerWidth] = useState(0)
     const [scrollWidth, setScrollWidth] = useState(0)
 
     const scrollX = useMotionValue(0)
@@ -43,7 +44,7 @@ export default function Carousel({ items, className = "" }: CarouselProps) {
                 const scrollContainer = container.querySelector('.scroll-container') as HTMLElement
 
                 if (scrollContainer) {
-                    setContainerWidth(container.offsetWidth)
+                    // setContainerWidth(container.offsetWidth)
                     setScrollWidth(scrollContainer.scrollWidth - container.offsetWidth)
                 }
             }
@@ -90,9 +91,11 @@ export default function Carousel({ items, className = "" }: CarouselProps) {
                 {duplicatedItems.map((item, index) => (
                     <div key={`${item.id}-${index}`} className="group cursor-pointer flex-shrink-0">
                         <div className="relative overflow-hidden rounded-2xl w-90 h-160">
-                            <img
+                            <Image
                                 src={item.thumbnail}
                                 alt={item.title}
+                                width={360}
+                                height={640}
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                             />
 
