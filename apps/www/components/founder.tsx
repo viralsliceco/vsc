@@ -32,7 +32,7 @@ const Founder = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                     <div className="flex justify-center lg:justify-start">
                         <Image
-                            src="/team.jpg"
+                            src="/founding-results.png"
                             alt="Adley Kinsman, founder of Viralish, wearing a black hat and top."
                             width={1158}
                             height={1200}
@@ -49,7 +49,7 @@ const Founder = () => {
                         <div className="space-y-5 text-lg text-text-secondary font-body mb-8">
                             <p>
                                 Are you struggling to get the views your videos deserve? Whether
-                                you’re an entrepreneur aiming to go viral or a major brand
+                                you're an entrepreneur aiming to go viral or a major brand
                                 seeking to amplify your message, Viralish is here to help.
                             </p>
                             <p>
@@ -65,12 +65,12 @@ const Founder = () => {
                                 Adley knows exactly how to capture and hold attention.
                             </p>
                             <p>
-                                Her expertise isn’t just theoretical; it’s the same formula she
+                                Her expertise isn't just theoretical; it's the same formula she
                                 teaches to her internal team to ensure they consistently
                                 deliver content for some of the biggest names in the industry.
                             </p>
                             <p>
-                                If you’re ready to unlock millions of views on demand, you’re in
+                                If you're ready to unlock millions of views on demand, you're in
                                 the right place.
                             </p>
                         </div>

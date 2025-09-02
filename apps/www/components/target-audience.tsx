@@ -1,4 +1,5 @@
 import { Button } from "@workspace/ui/components/button";
+import Image from "next/image";
 
 const TargetAudience = () => {
     return (
@@ -7,15 +8,13 @@ const TargetAudience = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
                     {/* Column 1: For Entrepreneurs */}
                     <div className="relative flex flex-col justify-end items-center text-center p-10 min-h-[550px] rounded-2xl overflow-hidden border border-border">
-                        <video
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
-                            poster="https://viralish.com/wp-content/uploads/2024/09/60s-AI-voice-Starburst-Drink-low.gif"
+                        <Image
+                            src="/images/creator.jpg"
+                            alt="Entrepreneur"
+                            width={1000}
+                            height={1000}
                             className="absolute top-0 left-0 w-full h-full object-cover z-0"
-                        >
-                        </video>
+                        />
                         <div className="absolute top-0 left-0 w-full h-full bg-black/60 z-10"></div>
                         <div className="relative z-20 flex flex-col items-center gap-y-6">
                             <h2 className="font-display text-4xl font-bold uppercase text-text-primary">
@@ -34,15 +33,13 @@ const TargetAudience = () => {
 
                     {/* Column 2: For Big Brands */}
                     <div id="brand" className="relative flex flex-col justify-end items-center text-center p-10 min-h-[550px] rounded-2xl overflow-hidden border border-border">
-                        <video
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
-                            poster="https://viralish.com/wp-content/uploads/2024/09/Snapinsta.app_video_4C4C3646368EE82C8E8E8F9F2348DF93_video_dashinit-low.gif"
+                        <Image
+                            src="/images/brand.jpg"
+                            alt="Brand"
+                            width={1000}
+                            height={1000}
                             className="absolute top-0 left-0 w-full h-full object-cover z-0"
-                        >
-                        </video>
+                        />
                         <div className="absolute top-0 left-0 w-full h-full bg-black/60 z-10"></div>
                         <div className="relative z-20 flex flex-col items-center gap-y-6">
                             <h2 className="font-display text-4xl font-bold uppercase text-text-primary">

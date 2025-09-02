@@ -1,34 +1,34 @@
-import Image from 'next/image';
+// import Image from 'next/image';
 import { cn } from "@workspace/ui/lib/utils";
 
 const videos = [
     {
-        gif: "https://viralish.com/wp-content/uploads/2024/09/LIT-Final-low.gif",
+        gif: "/reels/drbentley.mp4",
         // popupLink: "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI1NzIiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D",
         className: "hidden md:block",
         transform: "md:rotate-[-4deg] md:scale-90 md:translate-y-4",
         zIndex: 'z-0'
     },
     {
-        gif: "https://viralish.com/wp-content/uploads/2024/09/Snapinsta.app_video_E6486A1750BE76AE648C9DA0869AB781_video_dashinit-low.gif",
+        gif: "/reels/deecell.mp4",
         // popupLink: "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI1NzMiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D",
         transform: "md:scale-95",
         zIndex: 'z-10'
     },
     {
-        gif: "https://viralish.com/wp-content/uploads/2024/09/30-second-car-shower-low.gif",
+        gif: "/reels/tmc.mp4",
         // popupLink: "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI1NTAiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D",
         transform: "md:scale-100 md:-translate-y-6",
         zIndex: 'z-20'
     },
     {
-        gif: "https://viralish.com/wp-content/uploads/2024/09/60s-AI-voice-Starburst-Drink-low.gif",
+        gif: "/reels/megan.mp4",
         // popupLink: "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI1NzAiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D",
         transform: "md:scale-95",
         zIndex: 'z-10'
     },
     {
-        gif: "https://viralish.com/wp-content/uploads/2024/09/Snapinsta.app_video_4C4C3646368EE82C8E8E8F9F2348DF93_video_dashinit-low.gif",
+        gif: "/reels/ladybird.mp4",
         // popupLink: "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI1NzEiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D",
         className: "hidden md:block",
         transform: "md:rotate-[4deg] md:scale-90 md:translate-y-4",
@@ -54,13 +54,17 @@ const ViralVideosShowcase = () => {
                             style={{ minWidth: 220, maxWidth: 320 }}
                         >
                             <div className="rounded-lg overflow-hidden shadow-[0_8px_24px_-8px_rgba(0,0,0,0.4)] border-2 border-transparent group-hover:border-primary transition-colors bg-black">
-                                <Image
+                                <video
                                     src={video.gif}
-                                    alt={`Viral video showcase ${index + 1}`}
+                                    // alt={`Viral video showcase ${index + 1}`}
                                     width={320}
                                     height={570}
                                     className="w-full h-auto object-cover"
-                                    unoptimized
+                                    // unoptimized
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
                                 />
                             </div>
                         </a>
@@ -80,13 +84,17 @@ const ViralVideosShowcase = () => {
                             )}
                         >
                             <div className="rounded-lg md:rounded-2xl overflow-hidden shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] border-2 border-transparent group-hover:border-primary transition-colors">
-                                <Image
+                                <video
                                     src={video.gif}
-                                    alt={`Viral video showcase ${index + 1}`}
+                                    // alt={`Viral video showcase ${index + 1}`}
                                     width={360}
                                     height={640}
                                     className="w-full h-auto object-cover"
-                                    unoptimized
+                                    // unoptimized
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
                                 />
                             </div>
                         </a>

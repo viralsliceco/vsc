@@ -11,8 +11,8 @@ export default function Header() {
 
     const navItems = [
         { label: 'Home', href: '/' },
-        { label: 'Creators', href: '/creators' },
-        { label: 'Brands', href: '/brands' },
+        { label: 'Creators', href: '/' },
+        { label: 'Brands', href: '/' },
     ]
 
     return (
@@ -21,9 +21,9 @@ export default function Header() {
                 {/* Logo */}
                 <Link href="/" prefetch>
                     <div className="flex items-center gap-2">
-                        <Image src="/brand/vsc-logo.svg" alt="Viralish" width={34} height={20} />
+                        <Image src="/brand/vsc-logo.svg" alt="Viralish" width={40} height={20} />
                         <div className="text-xl font-medium">
-                            <span className="">Viral Slice Company</span>
+                            <span className="">Viral Slice Co.</span>
                         </div>
                     </div>
                 </Link>
