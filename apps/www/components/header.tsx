@@ -21,7 +21,7 @@ export default function Header() {
                 {/* Logo */}
                 <Link href="/" prefetch>
                     <div className="flex items-center gap-2">
-                        <Image src="/brand/vsc-logo.svg" alt="Viralish" width={40} height={20} />
+                        <Image src="/brand/vsc-logo.svg" alt="Viralish" width={64} height={20} />
                         <div className="text-xl font-medium">
                             <span className="">Viral Slice Co.</span>
                         </div>

@@ -33,7 +33,7 @@ const Founder = () => {
                     <div className="flex justify-center lg:justify-start">
                         <Image
                             src="/founding-results.png"
-                            alt="Adley Kinsman, founder of Viralish, wearing a black hat and top."
+                            alt="Viral Slice Co. media team working on content strategy."
                             width={1158}
                             height={1200}
                             className="rounded-2xl w-full max-w-sm sm:max-w-md lg:max-w-none h-auto object-cover"
@@ -42,53 +42,28 @@ const Founder = () => {
 
                     <div>
                         <h2 className={`${fontAnton.className} text-[47px] leading-[1.1] uppercase mb-6`}>
-                            THE BEST ATTENTION
-                            HACKERS IN THE WORLD.
+                            VIRAL SLICE CO: CONTENT THAT DOMINATES ATTENTION.
                         </h2>
 
                         <div className="space-y-5 text-lg text-text-secondary font-body mb-8">
                             <p>
-                                Are you struggling to get the views your videos deserve? Whether
-                                you're an entrepreneur aiming to go viral or a major brand
-                                seeking to amplify your message, Viralish is here to help.
+                                At <strong className="text-white font-semibold">Viral Slice Co.</strong>, we are a dedicated early-stage media and content management team based in Columbus, Ohio. Our mission is simple: create high-performing content that captures attention, drives engagement, and builds communities online.
                             </p>
                             <p>
-                                Adley has spent the last three years perfecting a proven method
-                                that garners over 1 billion views every month for brands and
-                                creators.
+                                With <strong className="text-white font-semibold">50M+ monthly views</strong>, <strong className="text-white font-semibold">10M+ followers</strong>, and over <strong className="text-white font-semibold">2B+ minutes viewed</strong> across client projects and personal brands, we've proven that our approach works.
                             </p>
                             <p>
-                                Having crafted viral videos for renowned brands like{' '}
-                                <strong className="text-white font-semibold">
-                                    Land Rover, AirHeads, Raising Canes, and HP,
-                                </strong>{' '}
-                                Adley knows exactly how to capture and hold attention.
+                                Whether you're a brand, creator, or entrepreneur, we specialize in crafting viral videos, social campaigns, and storytelling strategies that maximize reach on platforms like TikTok, Instagram Reels, and YouTube Shorts.
                             </p>
                             <p>
-                                Her expertise isn't just theoretical; it's the same formula she
-                                teaches to her internal team to ensure they consistently
-                                deliver content for some of the biggest names in the industry.
-                            </p>
-                            <p>
-                                If you're ready to unlock millions of views on demand, you're in
-                                the right place.
+                                Unlike large agencies, our Columbus-based team is hands-on and agile. We partner closely with you to produce content that not only looks great but is optimized for discoverability, shares, and conversions.
                             </p>
                         </div>
 
-                        {/* <div className="self-end mb-10 w-full max-w-[250px]">
-                            <Image
-                                src="https://viralish.com/wp-content/uploads/2024/09/adley-signature-white.png"
-                                alt="Adley's signature"
-                                width={250}
-                                height={147}
-                                className="w-full h-auto"
-                            />
-                        </div> */}
-
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            <StatCard value="2B+" label="Monthly Views" />
-                            <StatCard value="45M+" label="Followers" />
-                            <StatCard value="50B+" label="Mins Viewed" />
+                            <StatCard value="50M+" label="Monthly Views" />
+                            <StatCard value="10M+" label="Followers" />
+                            <StatCard value="2B+" label="Mins Viewed" />
                         </div>
                     </div>
                 </div>

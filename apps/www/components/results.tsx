@@ -11,51 +11,39 @@ export default function ResultsSection() {
     const videos: VideoItem[] = [
         {
             id: 1,
-            views: '2M+',
-            thumbnail: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=2070&auto=format&fit=crop',
+            views: '2.7M+',
+            thumbnail: '/viral/kaseena-thumbnail.jpg',
             title: 'Viral Video 1'
         },
         {
-            id: 2,
-            views: '18.7M+',
-            thumbnail: 'https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?q=80&w=2071&auto=format&fit=crop',
-            title: 'Viral Video 2'
-        },
-        {
             id: 3,
-            views: '48M+',
-            thumbnail: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=2070&auto=format&fit=crop',
+            views: '1.6M+',
+            thumbnail: '/viral/dentist-thumbnail.jpg',
             title: 'Viral Video 3'
         },
         {
             id: 4,
-            views: '89M+',
-            thumbnail: 'https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?q=80&w=2071&auto=format&fit=crop',
+            views: '10.6M+',
+            thumbnail: '/viral/color-thumbnail.jpg',
             title: 'Viral Video 4'
         },
         {
             id: 5,
-            views: '156M+',
-            thumbnail: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=2070&auto=format&fit=crop',
+            views: '6.1M+',
+            thumbnail: '/viral/kaseena2.jpg',
             title: 'Viral Video 5'
         },
         {
             id: 6,
-            views: '234M+',
-            thumbnail: 'https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?q=80&w=2071&auto=format&fit=crop',
+            views: '5.2M+',
+            thumbnail: '/viral/taylor.jpg',
             title: 'Viral Video 6'
         },
         {
             id: 7,
-            views: '89M+',
-            thumbnail: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=2070&auto=format&fit=crop',
+            views: '5.1M+',
+            thumbnail: '/viral/violetta-thumbnail.jpg',
             title: 'Viral Video 7'
-        },
-        {
-            id: 8,
-            views: '67M+',
-            thumbnail: 'https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?q=80&w=2071&auto=format&fit=crop',
-            title: 'Viral Video 8'
         },
     ]
 
