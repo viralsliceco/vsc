@@ -6,11 +6,15 @@ import { Providers } from "@/components/providers"
 const fontSans = Geist({
   subsets: ["latin"],
   variable: "--font-sans",
+  display: 'swap',
+  preload: true,
 })
 
 const fontMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
+  display: 'swap',
+  preload: false,
 })
 
 export default function RootLayout({

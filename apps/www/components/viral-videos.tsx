@@ -1,34 +1,36 @@
-// import Image from 'next/image';
+"use client";
+
 import { cn } from "@workspace/ui/lib/utils";
+import { useState, useRef, useEffect } from 'react';
 
 const videos = [
     {
-        gif: "/reels/drbentley.mp4",
+        video: "/reels/drbentley.mp4",
         // popupLink: "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI1NzIiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D",
         className: "hidden md:block",
         transform: "md:rotate-[-4deg] md:scale-90 md:translate-y-4",
         zIndex: 'z-0'
     },
     {
-        gif: "/reels/deecell.mp4",
+        video: "/reels/deecell.mp4",
         // popupLink: "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI1NzMiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D",
         transform: "md:scale-95",
         zIndex: 'z-10'
     },
     {
-        gif: "/reels/tmc.mp4",
+        video: "/reels/tmc.mp4",
         // popupLink: "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI1NTAiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D",
         transform: "md:scale-100 md:-translate-y-6",
         zIndex: 'z-20'
     },
     {
-        gif: "/reels/megan.mp4",
+        video: "/reels/megan.mp4",
         // popupLink: "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI1NzAiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D",
         transform: "md:scale-95",
         zIndex: 'z-10'
     },
     {
-        gif: "/reels/ladybird.mp4",
+        video: "/reels/ladybird.mp4",
         // popupLink: "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI1NzEiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D",
         className: "hidden md:block",
         transform: "md:rotate-[4deg] md:scale-90 md:translate-y-4",
@@ -36,68 +38,122 @@ const videos = [
     },
 ];
 
+const LazyVideo = ({ video, className, transform, zIndex, isMobile = false }: {
+    video: { video: string; className?: string; transform?: string; zIndex?: string };
+    className?: string;
+    transform?: string;
+    zIndex?: string;
+    isMobile?: boolean;
+}) => {
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [isInView, setIsInView] = useState(false);
+    const videoRef = useRef<HTMLVideoElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const entry = entries[0];
+                if (entry && entry.isIntersecting) {
+                    setIsInView(true);
+                    observer.disconnect();
+                }
+            },
+            {
+                rootMargin: '50px',
+                threshold: 0.1
+            }
+        );
+
+        if (containerRef.current) {
+            observer.observe(containerRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
+    const handleVideoLoad = () => {
+        setIsLoaded(true);
+    };
+
+    return (
+        <div
+            ref={containerRef}
+            className={cn(
+                "group relative transition-all duration-300 ease-in-out hover:z-30 hover:!scale-105",
+                isMobile
+                    ? "flex-shrink-0 w-4/5 max-w-xs snap-center"
+                    : "w-2/5 md:w-1/4 lg:w-1/5 shrink-0",
+                className,
+                transform,
+                zIndex
+            )}
+            style={isMobile ? { minWidth: 220, maxWidth: 320 } : {}}
+        >
+            <div className={cn(
+                "overflow-hidden shadow-[0_8px_24px_-8px_rgba(0,0,0,0.4)] border-2 border-transparent group-hover:border-primary transition-colors bg-black",
+                isMobile ? "rounded-lg" : "rounded-lg md:rounded-2xl"
+            )}>
+                {isInView && (
+                    <video
+                        ref={videoRef}
+                        src={video.video}
+                        width={isMobile ? 320 : 360}
+                        height={isMobile ? 570 : 640}
+                        className="w-full h-auto object-cover"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="metadata"
+                        onLoadedData={handleVideoLoad}
+                        style={{
+                            opacity: isLoaded ? 1 : 0,
+                            transition: 'opacity 0.3s ease-in-out'
+                        }}
+                    />
+                )}
+                {!isLoaded && isInView && (
+                    <div
+                        className="w-full h-auto bg-gray-800 animate-pulse flex items-center justify-center"
+                        style={{
+                            aspectRatio: isMobile ? '320/570' : '360/640',
+                            minHeight: isMobile ? '400px' : '500px'
+                        }}
+                    >
+                        <div className="text-gray-400 text-sm">Loading...</div>
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+};
+
 const ViralVideosShowcase = () => {
     return (
-
         <div className="bg-transparent -mt-14 md:-mt-40 relative pt-20 md:pt-24 pb-10 md:pb-24 overflow-hidden">
             <div className="relative">
                 {/* Mobile: Show only the main video, horizontally scrollable for all videos */}
                 <div className="flex md:hidden overflow-x-auto gap-4 px-4 pb-2 snap-x snap-mandatory">
                     {videos.map((video, index) => (
-                        <a
+                        <LazyVideo
                             key={index}
-                            // href={video.popuLink}
-                            className={cn(
-                                "group relative flex-shrink-0 w-4/5 max-w-xs snap-center transition-all duration-300 ease-in-out hover:z-30 hover:!scale-105",
-                                video.zIndex
-                            )}
-                            style={{ minWidth: 220, maxWidth: 320 }}
-                        >
-                            <div className="rounded-lg overflow-hidden shadow-[0_8px_24px_-8px_rgba(0,0,0,0.4)] border-2 border-transparent group-hover:border-primary transition-colors bg-black">
-                                <video
-                                    src={video.gif}
-                                    // alt={`Viral video showcase ${index + 1}`}
-                                    width={320}
-                                    height={570}
-                                    className="w-full h-auto object-cover"
-                                    // unoptimized
-                                    autoPlay
-                                    muted
-                                    loop
-                                    playsInline
-                                />
-                            </div>
-                        </a>
+                            video={video}
+                            zIndex={video.zIndex}
+                            isMobile={true}
+                        />
                     ))}
                 </div>
                 {/* Desktop: Show all videos in a row with overlap */}
                 <div className="hidden md:flex justify-center items-end px-4 -space-x-12 sm:-space-x-20 md:-space-x-24 lg:-space-x-16 xl:-space-x-20">
                     {videos.map((video, index) => (
-                        <a
+                        <LazyVideo
                             key={index}
-                            // href={video.popupLink}
-                            className={cn(
-                                "group relative w-2/5 md:w-1/4 lg:w-1/5 shrink-0 transition-all duration-300 ease-in-out hover:z-30 hover:!scale-105",
-                                video.className,
-                                video.transform,
-                                video.zIndex
-                            )}
-                        >
-                            <div className="rounded-lg md:rounded-2xl overflow-hidden shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] border-2 border-transparent group-hover:border-primary transition-colors">
-                                <video
-                                    src={video.gif}
-                                    // alt={`Viral video showcase ${index + 1}`}
-                                    width={360}
-                                    height={640}
-                                    className="w-full h-auto object-cover"
-                                    // unoptimized
-                                    autoPlay
-                                    muted
-                                    loop
-                                    playsInline
-                                />
-                            </div>
-                        </a>
+                            video={video}
+                            className={video.className}
+                            transform={video.transform}
+                            zIndex={video.zIndex}
+                        />
                     ))}
                 </div>
             </div>

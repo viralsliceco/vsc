@@ -23,7 +23,7 @@ export default function Header() {
                     <div className="flex items-center gap-2">
                         <Image src="/brand/vsc-logo.svg" alt="Viralish" width={64} height={20} />
                         <div className="text-xl font-medium">
-                            <span className="">Viral Slice Co.</span>
+                            {/* <span className="">Viral Slice Co.</span> */}
                         </div>
                     </div>
                 </Link>
