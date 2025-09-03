@@ -1,0 +1,7 @@
+export default function CreatorPage() {
+    return (
+        <div>
+            <h1>Creator Page</h1>
+        </div>
+    )
+}

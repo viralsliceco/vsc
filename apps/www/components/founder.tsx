@@ -32,7 +32,7 @@ const Founder = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                     <div className="flex justify-center lg:justify-start">
                         <Image
-                            src="/founding-results.png"
+                            src="/founder-results.png"
                             alt="Viral Slice Co. media team working on content strategy."
                             width={1158}
                             height={1200}
@@ -61,9 +61,9 @@ const Founder = () => {
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            <StatCard value="50M+" label="Monthly Views" />
-                            <StatCard value="10M+" label="Followers" />
-                            <StatCard value="2B+" label="Mins Viewed" />
+                            <StatCard value="85M+" label="Monthly Views" />
+                            <StatCard value="15M+" label="Followers" />
+                            <StatCard value="5B+" label="Mins Viewed" />
                         </div>
                     </div>
                 </div>

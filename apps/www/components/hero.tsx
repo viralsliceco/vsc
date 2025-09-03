@@ -30,13 +30,13 @@ export default function HeroSection() {
                 >
                     <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
                     <span className="text-white text-[0.78rem] font-normal leading-none">
-                        Viral Slice Co. Is The Leader In <strong className="font-semibold">Viral Videos</strong>
+                        Viral Slice Co. is the leader in <strong className="font-semibold">Viral Videos</strong>
                     </span>
                 </div>
 
                 {/* Main Headline */}
                 <h1 className={`text-5xl md:text-7xl lg:text-8xl text-white mb-6  tracking-tight ${fontAnton.className}`}>
-                    WE GET<span className="text-primary relative mb-1"> YOU
+                    WE MAKE YOUR<span className="text-primary relative mb-1"> CONTENT
                         <svg
                             className="absolute left-1/2 -translate-x-1/2 w-[105%] h-auto"
                             viewBox="0 0 223 13"
@@ -53,7 +53,7 @@ export default function HeroSection() {
                         </svg>
                     </span>
                     <br />
-                    <span className="text-white">ATTENTION</span>
+                    <span className="text-white">GET ATTENTION</span>
                 </h1>
 
                 {/* CTA Buttons */}

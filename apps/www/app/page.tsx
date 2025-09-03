@@ -18,9 +18,9 @@ const ResultsSection = dynamic(() => import("../components/results"), {
 const FounderSection = dynamic(() => import("../components/founder"), {
   loading: () => <div className="h-96 bg-black animate-pulse" />
 });
-const TestimonialsSection = dynamic(() => import("../components/testimonials"), {
-  loading: () => <div className="h-96 bg-black animate-pulse" />
-});
+// const TestimonialsSection = dynamic(() => import("../components/testimonials"), {
+//   loading: () => <div className="h-96 bg-black animate-pulse" />
+// });
 const Footer = dynamic(() => import("../components/footer"), {
   loading: () => <div className="h-32 bg-black animate-pulse" />
 });
@@ -37,7 +37,7 @@ export default function Page() {
         <ResultsIntroSection />
         <ResultsSection />
         <FounderSection />
-        <TestimonialsSection />
+        {/* <TestimonialsSection /> */}
       </main>
       <Footer />
     </div>
