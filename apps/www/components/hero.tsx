@@ -36,7 +36,7 @@ export default function HeroSection() {
 
                 {/* Main Headline */}
                 <h1 className={`text-5xl md:text-7xl lg:text-8xl text-white mb-6  tracking-tight ${fontAnton.className}`}>
-                    WE DON'T SUCK AT<span className="text-primary relative mb-1">
+                    {"WE DON'T SUCK AT"}<span className="text-primary relative mb-1">
                         <br />
                         MARKETING
                         <svg
