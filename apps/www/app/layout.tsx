@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google"
+import { Geist, Geist_Mono, Anton } from "next/font/google"
 
 import "@workspace/ui/globals.css"
 import { Providers } from "@/components/providers"
@@ -18,6 +18,14 @@ const fontMono = Geist_Mono({
   variable: "--font-mono",
   display: 'swap',
   preload: false,
+})
+
+const fontAnton = Anton({
+  subsets: ["latin"],
+  variable: "--font-anton",
+  weight: "400",
+  display: 'swap',
+  preload: true,
 })
 
 export const metadata: Metadata = {
@@ -147,7 +155,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased `}
+        className={`${fontSans.variable} ${fontMono.variable} ${fontAnton.variable} font-sans antialiased `}
       >
         <Providers>
           {children}

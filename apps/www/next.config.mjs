@@ -12,7 +12,13 @@ const nextConfig = {
   },
   // Compression
   compress: true,
-  // Bundle analyzer
+  // Turbopack configuration
+  turbopack: {
+    resolveAlias: {
+      // Add any necessary aliases here if needed
+    },
+  },
+  // Webpack configuration for production builds (when not using Turbopack)
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.fallback = {

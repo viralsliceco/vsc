@@ -1,14 +1,6 @@
 import Image from "next/image";
 import React from "react";
 
-import { Anton } from 'next/font/google';
-
-const fontAnton = Anton({
-    subsets: ["latin"],
-    variable: "--font-anton",
-    weight: "400",
-})
-
 interface StatCardProps {
     value: string;
     label: string;
@@ -16,7 +8,7 @@ interface StatCardProps {
 
 const StatCard: React.FC<StatCardProps> = ({ value, label }) => (
     <div className="bg-zinc-900 rounded-2xl p-6 text-center flex flex-col justify-center items-center">
-        <span className={`${fontAnton.className} text-4xl lg:text-[60px] leading-none text-white`}>
+        <span className="font-anton text-4xl lg:text-[60px] leading-none text-white">
             {value}
         </span>
         <span className="font-body text-base mt-2 text-white">
@@ -37,11 +29,14 @@ const Founder = () => {
                             width={1158}
                             height={1200}
                             className="rounded-2xl w-full max-w-sm sm:max-w-md lg:max-w-none h-auto object-cover"
+                            loading="lazy"
+                            placeholder="blur"
+                            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                         />
                     </div>
 
                     <div>
-                        <h2 className={`${fontAnton.className} text-[47px] leading-[1.1] uppercase mb-6`}>
+                        <h2 className="font-anton text-[47px] leading-[1.1] uppercase mb-6">
                             VIRAL SLICE CO: CONTENT THAT DOMINATES ATTENTION.
                         </h2>
 

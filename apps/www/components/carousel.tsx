@@ -1,15 +1,7 @@
 "use client"
 import { motion, useMotionValue, useSpring } from 'framer-motion'
 import { useRef, useEffect, useState } from 'react'
-
-import { Anton } from 'next/font/google';
 import Image from 'next/image';
-
-const fontAnton = Anton({
-    subsets: ["latin"],
-    variable: "--font-anton",
-    weight: "400",
-})
 
 interface CarouselItem {
     id: number
@@ -25,8 +17,8 @@ interface CarouselProps {
 
 export default function Carousel({ items, className = "" }: CarouselProps) {
     const containerRef = useRef<HTMLDivElement>(null)
-    // const [containerWidth, setContainerWidth] = useState(0)
     const [scrollWidth, setScrollWidth] = useState(0)
+    const [isAutoScrolling, setIsAutoScrolling] = useState(true)
 
     const scrollX = useMotionValue(0)
 
@@ -44,7 +36,6 @@ export default function Carousel({ items, className = "" }: CarouselProps) {
                 const scrollContainer = container.querySelector('.scroll-container') as HTMLElement
 
                 if (scrollContainer) {
-                    // setContainerWidth(container.offsetWidth)
                     setScrollWidth(scrollContainer.scrollWidth - container.offsetWidth)
                 }
             }
@@ -57,11 +48,11 @@ export default function Carousel({ items, className = "" }: CarouselProps) {
     }, [])
 
     useEffect(() => {
-        if (scrollWidth === 0) return
+        if (scrollWidth === 0 || !isAutoScrolling) return
 
         const animate = () => {
             const currentScroll = scrollX.get()
-            const newScroll = currentScroll - 2 // Negative value for right to left
+            const newScroll = currentScroll - 4 // Faster: -6 instead of -2
 
             // Reset when we've scrolled the width of one set of items
             if (newScroll <= -scrollWidth / 2) {
@@ -71,13 +62,26 @@ export default function Carousel({ items, className = "" }: CarouselProps) {
             }
         }
 
-        const interval = setInterval(animate, 50) // Adjust timing here (lower = faster)
+        const interval = setInterval(animate, 20) // Adjust timing here (lower = faster)
 
         return () => clearInterval(interval)
-    }, [scrollWidth, scrollX])
+    }, [scrollWidth, scrollX, isAutoScrolling])
 
-    // Duplicate items to create seamless loop
     const duplicatedItems = [...items, ...items]
+
+    const handleDragStart = () => {
+        setIsAutoScrolling(false)
+    }
+
+    const handleDragEnd = (_: any, info: { offset: { x: number } }) => {
+        const currentScroll = scrollX.get()
+        if (currentScroll <= -scrollWidth / 2) {
+            scrollX.set(0)
+        } else if (currentScroll > 0) {
+            scrollX.set(-scrollWidth / 2)
+        }
+        setIsAutoScrolling(true)
+    }
 
     return (
         <div
@@ -85,12 +89,17 @@ export default function Carousel({ items, className = "" }: CarouselProps) {
             className={`relative overflow-hidden ${className}`}
         >
             <motion.div
-                className="scroll-container flex gap-6"
+                className="scroll-container flex gap-6 cursor-grab active:cursor-grabbing"
                 style={{ x: smoothScrollX }}
+                drag="x"
+                dragConstraints={{ left: -scrollWidth / 2, right: 0 }}
+                dragElastic={0.1}
+                onDragStart={handleDragStart}
+                onDragEnd={handleDragEnd}
             >
                 {duplicatedItems.map((item, index) => (
                     <div key={`${item.id}-${index}`} className="group cursor-pointer flex-shrink-0">
-                        <div className="relative overflow-hidden rounded-2xl w-90 h-160">
+                        <div className="relative overflow-hidden rounded-2xl w-[360px] h-[640px]">
                             <Image
                                 src={item.thumbnail}
                                 alt={item.title}
@@ -111,7 +120,7 @@ export default function Carousel({ items, className = "" }: CarouselProps) {
 
                             {/* View count badge */}
                             <div className="absolute bottom-4 left-4">
-                                <div className={`${fontAnton.className} backdrop-blur-sm px-4 py-2 rounded bg-black/80`}>
+                                <div className="font-anton backdrop-blur-sm px-4 py-2 rounded bg-black/80">
                                     <div className="text-white text-3xl">{item.views}</div>
                                     <div className="text-gray-300 text-base">Views</div>
                                 </div>

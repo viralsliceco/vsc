@@ -36,25 +36,25 @@ const structuredData = {
 };
 
 const ServicesSection = dynamic(() => import("../components/services"), {
-  loading: () => <div className="h-96 bg-black animate-pulse" />
+  loading: () => <div className="min-h-[600px] bg-black animate-pulse flex items-center justify-center"><div className="text-gray-600">Loading Services...</div></div>
 });
 const TargetAudience = dynamic(() => import("../components/target-audience"), {
-  loading: () => <div className="h-96 bg-black animate-pulse" />
+  loading: () => <div className="min-h-[500px] bg-black animate-pulse flex items-center justify-center"><div className="text-gray-600">Loading Audience...</div></div>
 });
 const ResultsIntroSection = dynamic(() => import("../components/results-intro"), {
-  loading: () => <div className="h-96 bg-black animate-pulse" />
+  loading: () => <div className="min-h-[400px] bg-black animate-pulse flex items-center justify-center"><div className="text-gray-600">Loading Results...</div></div>
 });
 const ResultsSection = dynamic(() => import("../components/results"), {
-  loading: () => <div className="h-96 bg-black animate-pulse" />
+  loading: () => <div className="min-h-[700px] bg-black animate-pulse flex items-center justify-center"><div className="text-gray-600">Loading Carousel...</div></div>
 });
 const FounderSection = dynamic(() => import("../components/founder"), {
-  loading: () => <div className="h-96 bg-black animate-pulse" />
+  loading: () => <div className="min-h-[800px] bg-black animate-pulse flex items-center justify-center"><div className="text-gray-600">Loading About...</div></div>
 });
 // const TestimonialsSection = dynamic(() => import("../components/testimonials"), {
-//   loading: () => <div className="h-96 bg-black animate-pulse" />
+//   loading: () => <div className="min-h-[400px] bg-black animate-pulse flex items-center justify-center"><div className="text-gray-600">Loading Testimonials...</div></div>
 // });
 const Footer = dynamic(() => import("../components/footer"), {
-  loading: () => <div className="h-32 bg-black animate-pulse" />
+  loading: () => <div className="min-h-[200px] bg-black animate-pulse flex items-center justify-center"><div className="text-gray-600">Loading Footer...</div></div>
 });
 
 export default function Page() {

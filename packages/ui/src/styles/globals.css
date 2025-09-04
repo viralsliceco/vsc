@@ -87,3 +87,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .font-anton {
+    font-family: var(--font-anton);
+  }
+}

@@ -1,11 +1,4 @@
 import { Button } from '@workspace/ui/components/button'
-import { Anton } from 'next/font/google'
-
-const fontAnton = Anton({
-    subsets: ["latin"],
-    variable: "--font-anton",
-    weight: "400",
-})
 
 export default function HeroSection() {
     return (
@@ -31,20 +24,22 @@ export default function HeroSection() {
                     <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
                     <span className="text-white text-[0.78rem] font-normal leading-none">
                         Viral Slice Co. is the leader in <strong className="font-semibold">Viral Videos</strong>
-                    </span>
-                </div>
+                    </span>                
+                    </div>
 
                 {/* Main Headline */}
-                <h1 className={`text-5xl md:text-7xl lg:text-8xl text-white mb-6  tracking-tight ${fontAnton.className}`}>
+                <h1 className="text-5xl md:text-7xl lg:text-8xl text-white mb-6 tracking-tight font-anton">
                     {"WE DON'T SUCK AT"}<span className="text-primary relative mb-1">
                         <br />
                         MARKETING
                         <svg
-                            className="absolute left-1/2 -translate-x-1/2 w-[105%] h-auto"
+                            className="absolute left-1/2 -translate-x-1/2 w-[105%] h-[13px]"
                             viewBox="0 0 223 13"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                             preserveAspectRatio="none"
+                            width="223"
+                            height="13"
                         >
                             <path
                                 d="M1.38281 10.9785C42.2737 4.19561 142.923 -6.21633 221.053 10.9785"

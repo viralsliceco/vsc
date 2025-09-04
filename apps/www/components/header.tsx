@@ -20,11 +20,15 @@ export default function Header() {
             <div className="px-4 py-4 flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" prefetch>
-                    <div className="flex items-center gap-2">
-                        <Image src="/brand/vsc-logo.svg" alt="Viralish" width={60} height={20} />
-                        <div className="text-xl font-medium">
-                            {/* <span className="">Viral Slice Co.</span> */}
-                        </div>
+                    <div className="flex">
+                        <Image 
+                            src="/brand/vsc-logo.svg" 
+                            alt="Viral Slice Co." 
+                            width={64} 
+                            height={20} 
+                            priority
+                            className="w-full h-full"
+                        />
                     </div>
                 </Link>
 
@@ -53,22 +57,20 @@ export default function Header() {
             </div>
 
             {/* Mobile Menu */}
-            {isMenuOpen && (
-                <div className="md:hidden bg-black/95">
-                    <nav className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-                        {navItems.map((item) => (
-                            <a
-                                key={item.label}
-                                href={item.href}
-                                className="text-white hover:text-primary transition-colors duration-200"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                {item.label}
-                            </a>
-                        ))}
-                    </nav>
-                </div>
-            )}
+            <div className={`md:hidden bg-black/95 transition-all duration-200 overflow-hidden ${isMenuOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'}`}>
+                <nav className="container mx-auto px-4 py-4 flex flex-col space-y-4">
+                    {navItems.map((item) => (
+                        <a
+                            key={item.label}
+                            href={item.href}
+                            className="text-white hover:text-primary transition-colors duration-200"
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            {item.label}
+                        </a>
+                    ))}
+                </nav>
+            </div>
         </header>
     )
 }

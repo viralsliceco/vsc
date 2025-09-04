@@ -5,7 +5,7 @@ import { useState, useRef, useEffect } from 'react';
 
 const videos = [
     {
-        video: "/reels/drbentley.mp4",
+        video: "/reels/dadbod.mp4",
         // popupLink: "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI1NzIiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D",
         className: "hidden md:block",
         transform: "md:rotate-[-4deg] md:scale-90 md:translate-y-4",
@@ -115,13 +115,24 @@ const LazyVideo = ({ video, className, transform, zIndex, isMobile = false }: {
                 )}
                 {!isLoaded && isInView && (
                     <div
-                        className="w-full h-auto bg-gray-800 animate-pulse flex items-center justify-center"
+                        className="w-full bg-gray-800 animate-pulse flex items-center justify-center"
                         style={{
-                            aspectRatio: isMobile ? '320/570' : '360/640',
-                            minHeight: isMobile ? '400px' : '500px'
+                            width: isMobile ? 320 : 360,
+                            height: isMobile ? 570 : 640,
                         }}
                     >
                         <div className="text-gray-400 text-sm">Loading...</div>
+                    </div>
+                )}
+                {!isInView && (
+                    <div
+                        className="w-full bg-gray-900 flex items-center justify-center"
+                        style={{
+                            width: isMobile ? 320 : 360,
+                            height: isMobile ? 570 : 640,
+                        }}
+                    >
+                        <div className="text-gray-500 text-sm">•••</div>
                     </div>
                 )}
             </div>

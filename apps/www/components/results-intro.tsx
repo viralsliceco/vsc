@@ -1,11 +1,4 @@
 import React from 'react';
-import { Anton } from 'next/font/google';
-
-const fontAnton = Anton({
-    subsets: ["latin"],
-    variable: "--font-anton",
-    weight: "400",
-})
 
 const ResultsIntroSection = () => {
     return (
@@ -14,7 +7,7 @@ const ResultsIntroSection = () => {
                 <div className="flex flex-col items-center justify-between gap-8 lg:flex-row lg:gap-5">
                     {/* Left Column: Text Content */}
                     <div className="flex flex-col gap-5 text-center lg:text-left">
-                        <h2 className={`${fontAnton.className} text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] font-bold uppercase leading-[1.1] text-white`}>
+                        <h2 className="font-anton text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] font-bold uppercase leading-[1.1] text-white">
                             WE HAVE{' '}
                             <span className="relative inline-block text-primary after:absolute after:left-1/2 after:top-1/2 after:-z-10 after:h-[180%] after:w-[140%] after:-translate-x-1/2 after:-translate-y-1/2 after:-rotate-6 after:rounded-full after:border-4 after:border-primary after:content-[''] lg:after:h-[200%]">
                                 VIRALITY
