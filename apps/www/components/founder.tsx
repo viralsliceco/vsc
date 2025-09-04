@@ -37,7 +37,7 @@ const Founder = () => {
 
                     <div>
                         <h2 className="font-anton text-[47px] leading-[1.1] uppercase mb-6">
-                            VIRAL SLICE CO: CONTENT THAT DOMINATES ATTENTION.
+                            CONTENT THAT DOMINATES ATTENTION.
                         </h2>
 
                         <div className="space-y-5 text-lg text-text-secondary font-body mb-8">

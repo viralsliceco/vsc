@@ -2,17 +2,18 @@
 
 import { cn } from "@workspace/ui/lib/utils";
 import { useState, useRef, useEffect } from 'react';
+import { Spinner } from "@workspace/ui/components/ui/shadcn-io/spinner";
 
 const videos = [
     {
-        video: "/reels/dadbod.mp4",
+        video: "/reels/kat.mp4",
         // popupLink: "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI1NzIiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D",
         className: "hidden md:block",
         transform: "md:rotate-[-4deg] md:scale-90 md:translate-y-4",
         zIndex: 'z-0'
     },
     {
-        video: "/reels/deecell.mp4",
+        video: "/reels/deecell2.mp4",
         // popupLink: "#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjI1NzMiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D",
         transform: "md:scale-95",
         zIndex: 'z-10'
@@ -115,24 +116,26 @@ const LazyVideo = ({ video, className, transform, zIndex, isMobile = false }: {
                 )}
                 {!isLoaded && isInView && (
                     <div
-                        className="w-full bg-gray-800 animate-pulse flex items-center justify-center"
+                        className="w-full bg-zinc-950 animate-pulse flex items-center justify-center"
                         style={{
                             width: isMobile ? 320 : 360,
                             height: isMobile ? 570 : 640,
                         }}
                     >
-                        <div className="text-gray-400 text-sm">Loading...</div>
+                        <Spinner />
+                        {/* <div className="text-gray-400 text-sm">Loading...</div> */}
                     </div>
                 )}
                 {!isInView && (
                     <div
-                        className="w-full bg-gray-900 flex items-center justify-center"
+                        className="w-full bg-zinc-950 flex items-center justify-center"
                         style={{
                             width: isMobile ? 320 : 360,
                             height: isMobile ? 570 : 640,
                         }}
                     >
-                        <div className="text-gray-500 text-sm">•••</div>
+                        <Spinner />
+                        {/* <div className="text-gray-500 text-sm">•••</div> */}
                     </div>
                 )}
             </div>

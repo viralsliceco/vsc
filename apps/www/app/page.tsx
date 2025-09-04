@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic';
 import Header from "../components/header";
 import HeroSection from "../components/hero";
 import ViralVideosShowcase from "../components/viral-videos";
+import { Spinner } from "@workspace/ui/components/ui/shadcn-io/spinner";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -36,25 +37,25 @@ const structuredData = {
 };
 
 const ServicesSection = dynamic(() => import("../components/services"), {
-  loading: () => <div className="min-h-[600px] bg-black animate-pulse flex items-center justify-center"><div className="text-gray-600">Loading Services...</div></div>
+  loading: () => <div className="min-h-[600px] bg-black animate-pulse flex items-center justify-center"><Spinner /></div>
 });
 const TargetAudience = dynamic(() => import("../components/target-audience"), {
-  loading: () => <div className="min-h-[500px] bg-black animate-pulse flex items-center justify-center"><div className="text-gray-600">Loading Audience...</div></div>
+  loading: () => <div className="min-h-[500px] bg-black animate-pulse flex items-center justify-center"><Spinner /></div>
 });
 const ResultsIntroSection = dynamic(() => import("../components/results-intro"), {
-  loading: () => <div className="min-h-[400px] bg-black animate-pulse flex items-center justify-center"><div className="text-gray-600">Loading Results...</div></div>
+  loading: () => <div className="min-h-[400px] bg-black animate-pulse flex items-center justify-center"><Spinner /></div>
 });
 const ResultsSection = dynamic(() => import("../components/results"), {
-  loading: () => <div className="min-h-[700px] bg-black animate-pulse flex items-center justify-center"><div className="text-gray-600">Loading Carousel...</div></div>
+  loading: () => <div className="min-h-[700px] bg-black animate-pulse flex items-center justify-center"><Spinner /></div>
 });
 const FounderSection = dynamic(() => import("../components/founder"), {
-  loading: () => <div className="min-h-[800px] bg-black animate-pulse flex items-center justify-center"><div className="text-gray-600">Loading About...</div></div>
+  loading: () => <div className="min-h-[800px] bg-black animate-pulse flex items-center justify-center"><Spinner /></div>
 });
 // const TestimonialsSection = dynamic(() => import("../components/testimonials"), {
-//   loading: () => <div className="min-h-[400px] bg-black animate-pulse flex items-center justify-center"><div className="text-gray-600">Loading Testimonials...</div></div>
+//   loading: () => <div className="min-h-[400px] bg-black animate-pulse flex items-center justify-center"><Spinner /></div>
 // });
 const Footer = dynamic(() => import("../components/footer"), {
-  loading: () => <div className="min-h-[200px] bg-black animate-pulse flex items-center justify-center"><div className="text-gray-600">Loading Footer...</div></div>
+  loading: () => <div className="min-h-[200px] bg-black animate-pulse flex items-center justify-center"><Spinner /></div>
 });
 
 export default function Page() {

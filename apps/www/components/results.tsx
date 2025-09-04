@@ -10,6 +10,24 @@ interface VideoItem {
 export default function ResultsSection() {
     const videos: VideoItem[] = [
         {
+            id: 11,
+            views: '23.1M+',
+            thumbnail: '/viral/kat_thumbnail.jpg',
+            title: 'Viral Video 11'
+        },  
+        {
+            id: 12,
+            views: '20.2M+',
+            thumbnail: '/viral/cayla2.jpg',
+            title: 'Viral Video 12'
+        },
+        {
+            id: 13,
+            views: '18.9M+',
+            thumbnail: '/viral/trash.jpg',
+            title: 'Viral Video 13'
+        },
+        {
             id: 4,
             views: '10.6M+',
             thumbnail: '/viral/color-thumbnail.jpg',
@@ -69,6 +87,18 @@ export default function ResultsSection() {
             thumbnail: '/viral/cayla.jpg',
             title: 'Viral Video 8'
         },
+        {
+            id: 14,
+            views: '2.1M+',
+            thumbnail: '/viral/cayla3.jpg',
+            title: 'Viral Video 14'
+        },
+        // {
+        //     id: 15,
+        //     views: '2.2M+',
+        //     thumbnail: '/viral/cayla.jpg',
+        //     title: 'Viral Video 15'
+        // },
     ]
 
     return (
