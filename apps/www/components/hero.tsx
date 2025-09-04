@@ -36,7 +36,9 @@ export default function HeroSection() {
 
                 {/* Main Headline */}
                 <h1 className={`text-5xl md:text-7xl lg:text-8xl text-white mb-6  tracking-tight ${fontAnton.className}`}>
-                    WE MAKE YOUR<span className="text-primary relative mb-1"> CONTENT
+                    WE DON'T SUCK AT<span className="text-primary relative mb-1">
+                        <br />
+                        MARKETING
                         <svg
                             className="absolute left-1/2 -translate-x-1/2 w-[105%] h-auto"
                             viewBox="0 0 223 13"
@@ -47,17 +49,17 @@ export default function HeroSection() {
                             <path
                                 d="M1.38281 10.9785C42.2737 4.19561 142.923 -6.21633 221.053 10.9785"
                                 stroke="currentColor"
-                                strokeWidth="10"
+                                strokeWidth="2"
                                 strokeLinecap="round"
                             />
                         </svg>
-                    </span>
+                        </span>
                     <br />
-                    <span className="text-white">GET ATTENTION</span>
+                    {/* <span className="text-white">GET ATTENTION</span> */}
                 </h1>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-2 justify-center items-center mt-4 mb-14">
+                <div className="flex flex-col sm:flex-row gap-2 justify-center items-center mt-8 mb-14">
                     <Button size="lg" variant="default" className="rounded-2xl">
                         For Entrepreneurs
                     </Button>

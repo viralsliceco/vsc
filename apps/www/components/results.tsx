@@ -17,7 +17,7 @@ export default function ResultsSection() {
         },
         {
             id: 3,
-            views: '1.6M+',
+            views: '4.6M+',
             thumbnail: '/viral/dentist-thumbnail.jpg',
             title: 'Viral Video 3'
         },
@@ -44,6 +44,30 @@ export default function ResultsSection() {
             views: '5.1M+',
             thumbnail: '/viral/violetta-thumbnail.jpg',
             title: 'Viral Video 7'
+        },
+        {
+            id: 8,
+            views: '2.2M+',
+            thumbnail: '/viral/cayla.jpg',
+            title: 'Viral Video 8'
+        },
+        {
+            id: 9,
+            views: '3.4M+',
+            thumbnail: '/viral/joy.jpg',
+            title: 'Viral Video 9'
+        },
+        {
+            id: 10,
+            views: '9M+',
+            thumbnail: '/viral/megan2.jpg',
+            title: 'Viral Video 10'
+        },
+        {
+            id: 11,
+            views: '4.7M+',
+            thumbnail: '/viral/sheree.jpg',
+            title: 'Viral Video 11'
         },
     ]
 

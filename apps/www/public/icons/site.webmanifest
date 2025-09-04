@@ -1,0 +1,42 @@
+{
+  "name": "Viral Slice Co. - Drive Explosive Growth with Viral Marketing",
+  "short_name": "Viral Slice Co.",
+  "description": "Transform your brand with viral marketing that drives explosive growth. Create content that captivates audiences and delivers measurable results.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/android-chrome-512x512.png", 
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/apple-touch-icon.png",
+      "sizes": "180x180", 
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["business", "marketing", "productivity"],
+  "screenshots": [
+    {
+      "src": "/vsc-large.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Viral Slice Co. Homepage"
+    }
+  ]
+}
