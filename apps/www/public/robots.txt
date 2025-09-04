@@ -1,19 +1,12 @@
+# *
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+
+# Host
+Host: https://viralsliceco.com
 
 # Sitemaps
 Sitemap: https://viralsliceco.com/sitemap.xml
-
-# Crawl-delay for all bots
-Crawl-delay: 1
-
-# Block access to admin areas
-Disallow: /admin/
-Disallow: /_next/
-Disallow: /api/
-
-# Allow access to public assets
-Allow: /public/
-Allow: /images/
-Allow: /icons/
-Allow: /brand/

@@ -4,7 +4,7 @@ import "@workspace/ui/globals.css"
 import { Providers } from "@/components/providers"
 
 import { Analytics } from "@vercel/analytics/next"
-import { Metadata } from "next"
+import { Metadata, Viewport } from "next"
 
 const fontSans = Geist({
   subsets: ["latin"],
@@ -102,17 +102,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#000000" },
-  ],
   manifest: "/icons/site.webmanifest",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  },
   authors: [{ name: "Viral Slice Co.", url: "https://viralsliceco.com" }],
   creator: "Viral Slice Co.",
   publisher: "Viral Slice Co.",
@@ -136,6 +126,17 @@ export const metadata: Metadata = {
     "msapplication-TileColor": "#000000",
     "msapplication-config": "/icons/browserconfig.xml",
   },
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
 }
 
 export default function RootLayout({
