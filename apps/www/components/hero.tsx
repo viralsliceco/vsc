@@ -1,4 +1,6 @@
 import { Button } from '@workspace/ui/components/button'
+import { ArrowRight, Mail } from 'lucide-react'
+import Link from 'next/link'
 
 export default function HeroSection() {
     return (
@@ -54,14 +56,12 @@ export default function HeroSection() {
                 </h1>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-2 justify-center items-center mt-8 mb-14">
-                    <Button size="lg" variant="default" className="rounded-2xl">
-                        For Entrepreneurs
+                <div className="flex flex-col sm:flex-row gap-2 justify-center items-center mt-2 mb-14">
+                    <Link href="/contact">
+                    <Button size="lg" variant="default" className="rounded-2xl cursor-pointer">
+                        Contact Us <ArrowRight className="w-4 h-4" />
                     </Button>
-
-                    <Button size="lg" variant="outline" className="rounded-2xl">
-                        For Creators
-                    </Button>
+                    </Link>
                 </div>
             </div>
         </section>
