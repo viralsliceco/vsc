@@ -25,7 +25,7 @@ export default function Footer() {
     ];
 
     const legalLinks = [
-        { label: 'Terms of Service', href: '#' },
+        { label: 'Terms of Service', href: '#'},
         { label: 'Privacy Policy', href: '#' },
         { label: 'Cookie Policy', href: '#' },
         { label: 'Date Request Policy', href: '#' }
