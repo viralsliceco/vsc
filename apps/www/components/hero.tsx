@@ -6,12 +6,12 @@ export default function HeroSection() {
     return (
         <section className="min-h-[calc(65vh-80px)] relative flex items-center justify-center text-center overflow-hidden mb-8">
             {/* Background overlay */}
-            {/* <div
+            <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{
                     backgroundImage: 'linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("https://images.unsplash.com/photo-1622976479615-38700d470a1c?q=80&w=2049&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
                 }}
-            /> */}
+            />
 
             {/* Content */}
             <div className="relative z-10 container mx-auto px-4">
@@ -25,7 +25,7 @@ export default function HeroSection() {
                 >
                     <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
                     <span className="text-white text-[0.78rem] font-normal leading-none">
-                        Viral Slice Co. is the leader in <strong className="font-semibold">Viral Videos</strong>
+                        Viral Slice Co. is the leader in <strong className="font-semibold">Digital Marketing</strong>
                     </span>                
                     </div>
 

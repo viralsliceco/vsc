@@ -18,7 +18,7 @@ const config = {
   transform: async (config, path) => {
     // Custom priority for different pages
     let priority = 0.7;
-    let changefreq = 'monthly';
+    let changefreq = 'weekly';
 
     if (path === '/') {
       priority = 1.0;
