@@ -24,7 +24,6 @@ export default function Header() {
       hasDropdown: true,
       dropdownItems: [
         { label: "Creative", href: "/services/creative" },
-        { label: "Media", href: "/services/media" },
         { label: "Strategy", href: "/services/strategy" },
         { label: "Consulting", href: "/services/consulting" },
         { label: "Web Design", href: "/services/web-design" },

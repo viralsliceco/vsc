@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Palette, Users, Monitor, Target, TrendingUp, ArrowRight } from 'lucide-react';
+import { Palette, Users, Monitor, Target, ArrowRight } from 'lucide-react';
 
 const services = [
     {
@@ -9,6 +9,13 @@ const services = [
         icon: Palette,
         href: '/services/creative',
         features: ['Strategic Organic Creative', 'Social AOR', 'Creative AOR']
+    },
+    {
+        title: 'Strategy',
+        description: 'ACE Audit approach prioritizing consumer attention, culture, and empathy for targeted impact.',
+        icon: Target,
+        href: '/services/strategy',
+        features: ['ACE Audit', 'Platforms & Culture', 'Real-Time Relevance', 'Cultural Intelligence']
     },
     {
         title: 'Consulting',
@@ -23,20 +30,6 @@ const services = [
         icon: Monitor,
         href: '/services/web-design',
         features: ['Responsive Design', 'UI/UX Design', 'Frontend Development', 'SEO Optimization', 'Conversion Optimization', 'E-commerce Solutions']
-    },
-    {
-        title: 'Strategy',
-        description: 'ACE Audit approach prioritizing consumer attention, culture, and empathy for targeted impact.',
-        icon: Target,
-        href: '/services/strategy',
-        features: ['ACE Audit', 'Platforms & Culture', 'Real-Time Relevance', 'Cultural Intelligence']
-    },
-    {
-        title: 'Media',
-        description: 'Driving business results through the practitionership of identifying underpriced attention.',
-        icon: TrendingUp,
-        href: '/services/media',
-        features: ['Social AOR', 'Digital Media AOR', 'Media AOR', 'ARB Report']
     }
 ];
 
@@ -68,10 +61,7 @@ export default function ServicesSection() {
 
                 {/* Services Grid */}
                 <div className="w-full">
-                    <h3 className="text-2xl md:text-3xl font-anton font-bold uppercase text-white text-center mb-12">
-                        Our Services
-                    </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {services.map((service, index) => {
                             const IconComponent = service.icon;
                             return (
