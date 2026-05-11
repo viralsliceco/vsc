@@ -3,10 +3,10 @@ import { Wordmark } from "./ui/wordmark"
 
 export default function Footer() {
     const links = [
-        { label: 'Home', href: '#' },
-        { label: 'Creators', href: '#' },
-        { label: 'Brands', href: '#' },
-        // { label: 'Speaking', href: '#' }
+        { label: 'Home', href: '/' },
+        { label: 'Creators', href: '/creators' },
+        { label: 'Brands', href: '/brands' },
+        { label: 'Contact', href: '/contact' },
     ]
 
     // const socialLinks = [
@@ -33,10 +33,10 @@ export default function Footer() {
     // ]
 
     const legalLinks = [
-        { label: 'Terms of Service', href: '#' },
-        { label: 'Privacy Policy', href: '#' },
-        { label: 'Cookie Policy', href: '#' },
-        { label: 'Date Request Policy', href: '#' }
+        { label: 'Terms of Service', href: '/legal/terms' },
+        { label: 'Privacy Policy', href: '/legal/privacy' },
+        { label: 'Cookie Policy', href: '/legal/cookies' },
+        { label: 'Data Request', href: '/legal/data-request' },
     ]
 
     return (

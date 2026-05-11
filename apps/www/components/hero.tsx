@@ -57,9 +57,9 @@ export default function HeroSection() {
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-2 justify-center items-center mt-2 mb-14">
-                    <Link href="/contact">
+                    <Link href="/get-started" prefetch>
                     <Button size="lg" variant="default" className="rounded-2xl cursor-pointer">
-                        Contact Us <ArrowRight className="w-4 h-4" />
+                        Get Started <ArrowRight className="w-4 h-4" />
                     </Button>
                     </Link>
                 </div>
