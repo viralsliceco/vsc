@@ -2,13 +2,13 @@
 const config = {
   siteUrl: process.env.SITE_URL || 'https://viralsliceco.com',
   generateRobotsTxt: true,
-  exclude: ['/admin/*', '/api/*'],
+  exclude: ['/admin/*', '/api/*', '/get-started', '/thanks'],
   robotsTxtOptions: {
     policies: [
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/admin/', '/api/', '/_next/'],
+        disallow: ['/admin/', '/api/', '/_next/', '/get-started', '/thanks'],
       },
     ],
     additionalSitemaps: [

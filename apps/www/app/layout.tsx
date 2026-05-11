@@ -2,9 +2,11 @@ import { Geist, Geist_Mono, Anton } from "next/font/google"
 
 import "@workspace/ui/globals.css"
 import { Providers } from "@/components/providers"
+import { MetaPixel } from "@/components/meta-pixel"
 
 import { Analytics } from "@vercel/analytics/next"
 import { Metadata, Viewport } from "next"
+import { Suspense } from "react"
 
 const fontSans = Geist({
   subsets: ["latin"],
@@ -158,6 +160,10 @@ export default function RootLayout({
         className={`${fontSans.variable} ${fontMono.variable} ${fontAnton.variable} font-sans antialiased `}
       >
         <Providers>
+          {/* Suspense required because MetaPixel uses useSearchParams */}
+          <Suspense fallback={null}>
+            <MetaPixel />
+          </Suspense>
           {children}
           <Analytics />
         </Providers>
