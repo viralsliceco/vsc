@@ -53,19 +53,29 @@ type SelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
 };
 export function Select({ options, placeholder = "Select…", error, className, ...rest }: SelectProps) {
   return (
-    <select
-      className={`${baseField} appearance-none ${error ? "border-red-500/60" : ""} ${className ?? ""}`}
-      {...rest}
-    >
-      <option value="" disabled>
-        {placeholder}
-      </option>
-      {options.map((opt) => (
-        <option key={opt} value={opt}>
-          {opt}
+    <div className="relative">
+      <select
+        className={`${baseField} appearance-none pr-10 cursor-pointer ${error ? "border-red-500/60" : ""} ${className ?? ""}`}
+        {...rest}
+      >
+        <option value="" disabled>
+          {placeholder}
         </option>
-      ))}
-    </select>
+        {options.map((opt) => (
+          <option key={opt} value={opt}>
+            {opt}
+          </option>
+        ))}
+      </select>
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 20 20"
+        fill="none"
+        className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-zinc-400"
+      >
+        <path d="M5 7l5 5 5-5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </div>
   );
 }
 
