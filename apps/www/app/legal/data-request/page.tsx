@@ -21,7 +21,7 @@ export default function DataRequestPage() {
 
       <h2>How to request</h2>
       <p>
-        Send an email to <a href="mailto:james@viralsliceco.com">james@viralsliceco.com</a> with one
+        Send an email to <a href="mailto:hello@viralsliceco.com">hello@viralsliceco.com</a> with one
         of the following subject lines:
       </p>
       <ul>
@@ -63,7 +63,7 @@ export default function DataRequestPage() {
 
       <h2>Contact</h2>
       <p>
-        <a href="mailto:james@viralsliceco.com">james@viralsliceco.com</a>
+        <a href="mailto:hello@viralsliceco.com">hello@viralsliceco.com</a>
       </p>
     </>
   );

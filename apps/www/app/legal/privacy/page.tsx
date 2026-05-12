@@ -89,7 +89,7 @@ export default function PrivacyPage() {
       </ul>
       <p>
         To exercise any of these rights, see our <a href="/legal/data-request">Data Request</a> page
-        or email <a href="mailto:james@viralsliceco.com">james@viralsliceco.com</a>. We will respond
+        or email <a href="mailto:hello@viralsliceco.com">hello@viralsliceco.com</a>. We will respond
         within 30 days.
       </p>
 
@@ -109,7 +109,7 @@ export default function PrivacyPage() {
       <p>
         Viral Slice Co.
         <br />
-        <a href="mailto:james@viralsliceco.com">james@viralsliceco.com</a>
+        <a href="mailto:hello@viralsliceco.com">hello@viralsliceco.com</a>
       </p>
     </>
   );
