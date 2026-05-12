@@ -5,8 +5,11 @@ import { Providers } from "@/components/providers"
 import { MetaPixel } from "@/components/meta-pixel"
 
 import { Analytics } from "@vercel/analytics/next"
+import { GoogleAnalytics } from "@next/third-parties/google"
 import { Metadata, Viewport } from "next"
 import { Suspense } from "react"
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 
 const fontSans = Geist({
   subsets: ["latin"],
@@ -167,6 +170,9 @@ export default function RootLayout({
           {children}
           <Analytics />
         </Providers>
+        {/* Google Analytics 4 — only renders when NEXT_PUBLIC_GA_ID is set so
+            local dev / preview deploys don't pollute production data. */}
+        {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
       </body>
     </html>
   )

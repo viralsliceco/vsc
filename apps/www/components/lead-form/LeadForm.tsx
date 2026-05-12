@@ -28,6 +28,7 @@ import {
 } from "@/lib/lead-types";
 import { captureAttribution, getAttribution } from "@/lib/utm";
 import { trackLead } from "@/components/meta-pixel";
+import { sendGAEvent } from "@next/third-parties/google";
 import { Label, FieldError, TextInput, Select, TextArea } from "./fields";
 
 type Errors = Partial<Record<keyof LeadInput, string>>;
@@ -168,6 +169,15 @@ export default function LeadForm() {
         throw new Error(json.error || `Submission failed (${res.status})`);
       }
       if (json.eventId) trackLead(json.eventId);
+      // GA4 standard event for lead generation. value/currency help GA4 build
+      // monetary attribution reports later if you ever want them.
+      sendGAEvent("event", "generate_lead", {
+        currency: "USD",
+        value: 250,
+        lead_industry: result.data.industry,
+        lead_revenue: result.data.monthlyRevenue,
+        lead_budget: result.data.marketingBudget,
+      });
       router.push("/thanks");
     } catch (err) {
       console.error("[lead] submit failed", err);
