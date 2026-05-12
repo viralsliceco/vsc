@@ -63,7 +63,7 @@ export default function CookiesPage() {
 
       <h2>Contact</h2>
       <p>
-        <a href="mailto:james@viralsliceco.com">james@viralsliceco.com</a>
+        <a href="mailto:hello@viralsliceco.com">hello@viralsliceco.com</a>
       </p>
     </>
   );
