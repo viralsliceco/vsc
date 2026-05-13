@@ -9,7 +9,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Apply to work with Viral Slice Co.",
   description:
-    "Tell us a little about your business and we'll book a free 30-minute strategy call to see if we're the right fit to help you grow.",
+    "Tell us a little about your business and we'll book a free 15-minute strategy call to see if we're the right fit to help you grow.",
   robots: { index: false, follow: false }, // Keep paid-traffic landers out of search.
   alternates: { canonical: "/get-started" },
 };
@@ -55,7 +55,7 @@ export default function GetStartedPage() {
             </h1>
             <p className="text-zinc-300 text-base md:text-lg mb-7 max-w-lg">
               Answer a few quick questions so we can see if we&apos;re the right fit.
-              If we are, you&apos;ll book a free 30-minute call right after — straight on the calendar.
+              If we are, you&apos;ll book a free 15-minute call right after — straight on the calendar.
             </p>
 
             {/* Social proof stats. Edit STATS at the top of this file. */}
