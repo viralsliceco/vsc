@@ -33,7 +33,7 @@ Appointment Scheduling.
 2. Click the red **Create** button in the top-left → **Appointment schedule**.
 3. Set:
    - Title: *Viral Slice Co. — Strategy Call*
-   - Duration: 30 minutes
+   - Duration: 15 minutes
    - Availability window: pick the hours you want calls.
    - Booking window: e.g. require 24 hours notice, max 30 days out.
 4. Under **Booked appointment settings**:

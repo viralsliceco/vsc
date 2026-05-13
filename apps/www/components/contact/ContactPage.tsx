@@ -10,7 +10,7 @@ export default function ContactPage() {
           </h1>
           <p className="text-zinc-400 max-w-xl mx-auto">
             Tell us a little about your business. If we&apos;re a fit, you&apos;ll book a free
-            30-minute strategy call on the next screen.
+            15-minute strategy call on the next screen.
           </p>
         </div>
         <div className="max-w-3xl mx-auto rounded-2xl border border-zinc-900 bg-zinc-950/40 p-6 md:p-8">

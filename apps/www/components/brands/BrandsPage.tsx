@@ -177,7 +177,7 @@ export default function BrandsPage() {
           START <span className="text-primary">GROWING</span>?
         </h2>
         <p className="text-zinc-300 text-lg mb-8">
-          Book a 30-minute strategy call. We&apos;ll tear down a recent post of yours, tell you
+          Book a 15-minute strategy call. We&apos;ll tear down a recent post of yours, tell you
           exactly what to fix, and figure out whether working together makes sense.
         </p>
         <Link href="/get-started?utm_source=brands_page&utm_medium=cta&utm_campaign=brands_footer" prefetch>
