@@ -14,13 +14,22 @@ export const metadata: Metadata = {
   alternates: { canonical: "/get-started" },
 };
 
-const POINTS = [
-  "Free 30-minute strategy call — no obligation",
-  "We only take on businesses we know we can move the needle for",
-  "Walk away with at least one idea you can use even if we don't work together",
+// TODO(VSC): replace these with real numbers from your Results section.
+// Any stat with an empty `value` is hidden automatically.
+const STATS = [
+  { value: "500M+", label: "Views generated" },
+  { value: "40+", label: "Brands served" },
+];
+
+const WHATS_ON_THE_CALL = [
+  "A 5-minute teardown of your last post — what's working, what's costing you reach",
+  "One specific hook or angle you can use this week — yours to keep, free",
+  "A straight answer on whether we're the right fit — no high-pressure pitch",
 ];
 
 export default function GetStartedPage() {
+  const visibleStats = STATS.filter((s) => s.value && s.label);
+
   return (
     <main className="min-h-screen bg-black text-white">
       <div className="container mx-auto px-4 py-10 md:py-14">
@@ -36,7 +45,7 @@ export default function GetStartedPage() {
 
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 max-w-6xl mx-auto items-start">
           {/* Pitch column */}
-          <div className="lg:sticky lg:top-10">
+          <div>
             <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full mb-5 border border-white/20 bg-white/5 backdrop-blur-md">
               <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
               <span className="text-white/90 text-[0.78rem]">Now accepting new clients</span>
@@ -48,21 +57,54 @@ export default function GetStartedPage() {
               Answer a few quick questions so we can see if we&apos;re the right fit.
               If we are, you&apos;ll book a free 30-minute call right after — straight on the calendar.
             </p>
-            <ul className="space-y-3">
-              {POINTS.map((p) => (
-                <li key={p} className="flex items-start gap-3 text-zinc-200">
-                  <span className="mt-1 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary">
-                    ✓
-                  </span>
-                  <span>{p}</span>
-                </li>
-              ))}
-            </ul>
+
+            {/* Social proof stats. Edit STATS at the top of this file. */}
+            {visibleStats.length > 0 && (
+              <div className="flex flex-wrap gap-10 mb-8 pb-8 border-b border-zinc-900">
+                {visibleStats.map((s) => (
+                  <div key={s.label}>
+                    <div className="text-3xl md:text-4xl font-anton text-primary leading-none mb-1.5">
+                      {s.value}
+                    </div>
+                    <div className="text-[0.7rem] uppercase tracking-wider text-zinc-500">
+                      {s.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* What you'll get on the call — sets expectation, reduces no-shows. */}
+            <div className="mb-7">
+              <h2 className="text-xs uppercase tracking-[0.15em] text-zinc-400 mb-4">
+                What you&apos;ll get on the call
+              </h2>
+              <ul className="space-y-3">
+                {WHATS_ON_THE_CALL.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-zinc-200">
+                    <span className="mt-1 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary text-sm">
+                      ✓
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Who this is for — pre-qualifies before the form is even started. */}
+            <div className="rounded-xl border border-zinc-900 bg-zinc-950/60 px-4 py-3.5 text-sm text-zinc-400">
+              <strong className="text-white">Who this is for:</strong>{" "}
+              Brands doing $50K+/month in revenue with at least a $2.5K/month content budget. If
+              that&apos;s not you yet, we&apos;ll tell you — no hard feelings.
+            </div>
           </div>
 
           {/* Form column */}
           <div className="rounded-2xl border border-zinc-900 bg-zinc-950/40 p-6 md:p-8">
             <LeadForm />
+            <p className="mt-4 text-xs text-zinc-500 text-center">
+              Takes about 2 minutes. We respond within 24 hours.
+            </p>
           </div>
         </div>
       </div>
