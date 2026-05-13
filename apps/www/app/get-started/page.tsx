@@ -14,11 +14,12 @@ export const metadata: Metadata = {
   alternates: { canonical: "/get-started" },
 };
 
-// TODO(VSC): replace these with real numbers from your Results section.
-// Any stat with an empty `value` is hidden automatically.
+// Any stat with an empty `value` is hidden automatically. Numbers below are
+// real, defensible totals across the VSC client portfolio. Update as the
+// portfolio grows — keep them rounded to readable thresholds.
 const STATS = [
-  { value: "500M+", label: "Views generated" },
-  { value: "40+", label: "Brands served" },
+  { value: "1.8B+", label: "Views generated" },
+  { value: "100+", label: "Brands served" },
 ];
 
 const WHATS_ON_THE_CALL = [
