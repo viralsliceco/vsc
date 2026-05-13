@@ -1,9 +1,7 @@
-import posthog from "posthog-js"
-
-posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
-  api_host: "/ingest",
-  ui_host: "https://us.posthog.com",
-  defaults: '2025-05-24',
-  capture_exceptions: true, // This enables capturing exceptions using Error Tracking
-  debug: process.env.NODE_ENV === "development",
-})
+// PostHog removed — VSC is not using it.
+// File kept (instead of deleted) because Next.js expects this exact filename
+// for client-side instrumentation; deleting it could break the build under
+// some Next.js + Turbopack configurations. Leaving it as a no-op is safer.
+//
+// If you ever want to add client-side analytics here, this is the place.
+export {};
