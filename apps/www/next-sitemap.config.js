@@ -26,6 +26,12 @@ const config = {
     } else if (path === '/brands' || path === '/creators') {
       priority = 0.8;
       changefreq = 'monthly';
+    } else if (path === '/blog') {
+      priority = 0.9;
+      changefreq = 'daily';
+    } else if (path.startsWith('/blog/')) {
+      priority = 0.8;
+      changefreq = 'weekly';
     }
 
     return {

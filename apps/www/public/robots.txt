@@ -4,6 +4,8 @@ Allow: /
 Disallow: /admin/
 Disallow: /api/
 Disallow: /_next/
+Disallow: /get-started
+Disallow: /thanks
 
 # Host
 Host: https://viralsliceco.com
