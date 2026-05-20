@@ -53,7 +53,7 @@ export async function sendMetaLeadEvent(
   if (meta.fbp) userData.fbp = meta.fbp;
   if (meta.fbc) userData.fbc = meta.fbc;
 
-  const body = {
+  const body: Record<string, unknown> = {
     data: [
       {
         event_name: "Lead",
@@ -72,6 +72,16 @@ export async function sendMetaLeadEvent(
       },
     ],
   };
+
+  // If META_TEST_EVENT_CODE is set, tag events so they surface in the
+  // Events Manager "Test Events" tab as Server events. Use this only for
+  // verification — UNSET it in production once confirmed, otherwise real
+  // conversions get routed to test data and won't count toward ad
+  // optimization.
+  const testEventCode = process.env.META_TEST_EVENT_CODE;
+  if (testEventCode) {
+    body.test_event_code = testEventCode;
+  }
 
   try {
     const url = `https://graph.facebook.com/v18.0/${encodeURIComponent(pixelId)}/events?access_token=${encodeURIComponent(token)}`;
