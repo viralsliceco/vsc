@@ -31,10 +31,14 @@ export async function sendMetaLeadEvent(
     fbc?: string;
   },
 ): Promise<{ ok: boolean; error?: string }> {
-  const pixelId = process.env.META_PIXEL_ID;
+  // The pixel ID is not secret (it's already exposed client-side via
+  // NEXT_PUBLIC_META_PIXEL_ID), so we fall back to it rather than requiring
+  // a separate server-only META_PIXEL_ID env var. Only META_CAPI_TOKEN
+  // genuinely needs to be a private server-side secret.
+  const pixelId = process.env.META_PIXEL_ID || process.env.NEXT_PUBLIC_META_PIXEL_ID;
   const token = process.env.META_CAPI_TOKEN;
   if (!pixelId || !token) {
-    console.warn("[lead] META_PIXEL_ID or META_CAPI_TOKEN not set — skipping CAPI");
+    console.warn("[lead] pixel ID or META_CAPI_TOKEN not set — skipping CAPI");
     return { ok: false, error: "CAPI not configured" };
   }
 
