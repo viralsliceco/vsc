@@ -14,17 +14,18 @@ export const metadata: Metadata = {
   alternates: { canonical: "/get-started" },
 };
 
-// TODO(VSC): replace these with real numbers from your Results section.
-// Any stat with an empty `value` is hidden automatically.
+// Any stat with an empty `value` is hidden automatically. Numbers below are
+// real, defensible totals across the VSC client portfolio. Update as the
+// portfolio grows — keep them rounded to readable thresholds.
 const STATS = [
-  { value: "500M+", label: "Views generated" },
-  { value: "40+", label: "Brands served" },
+  { value: "1.8B+", label: "Views generated" },
+  { value: "100+", label: "Brands served" },
 ];
 
-const WHATS_ON_THE_CALL = [
-  "A 5-minute teardown of your last post — what's working, what's costing you reach",
-  "One specific hook or angle you can use this week — yours to keep, free",
-  "A straight answer on whether we're the right fit — no high-pressure pitch",
+const POINTS = [
+  "Free 15-minute strategy call — no obligation",
+  "We only take on businesses we know we can move the needle for",
+  "Walk away with at least one idea you can use even if we don't work together",
 ];
 
 export default function GetStartedPage() {
@@ -74,29 +75,18 @@ export default function GetStartedPage() {
               </div>
             )}
 
-            {/* What you'll get on the call — sets expectation, reduces no-shows. */}
-            <div className="mb-7">
-              <h2 className="text-xs uppercase tracking-[0.15em] text-zinc-400 mb-4">
-                What you&apos;ll get on the call
-              </h2>
-              <ul className="space-y-3">
-                {WHATS_ON_THE_CALL.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-zinc-200">
-                    <span className="mt-1 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary text-sm">
-                      ✓
-                    </span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Who this is for — pre-qualifies before the form is even started. */}
-            <div className="rounded-xl border border-zinc-900 bg-zinc-950/60 px-4 py-3.5 text-sm text-zinc-400">
-              <strong className="text-white">Who this is for:</strong>{" "}
-              Brands doing $50K+/month in revenue with at least a $2.5K/month content budget. If
-              that&apos;s not you yet, we&apos;ll tell you — no hard feelings.
-            </div>
+            {/* Value props — soft, no hard qualifier. Filtering happens
+                in-conversation (chat / strategy call) rather than on-page. */}
+            <ul className="space-y-3">
+              {POINTS.map((p) => (
+                <li key={p} className="flex items-start gap-3 text-zinc-200">
+                  <span className="mt-1 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary">
+                    ✓
+                  </span>
+                  <span>{p}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Form column */}
