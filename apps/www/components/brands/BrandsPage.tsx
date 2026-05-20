@@ -129,7 +129,7 @@ export default function BrandsPage() {
               <ul className="space-y-2">
                 <li className="flex gap-3">
                   <span className="text-primary">→</span>
-                  <span>Doing at least $50k/mo in revenue, with budget to invest in growth</span>
+                  <span>Ready to invest in growth, not just one-off content drops</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-primary">→</span>
@@ -158,7 +158,7 @@ export default function BrandsPage() {
                 </li>
                 <li className="flex gap-3">
                   <span className="text-zinc-600">×</span>
-                  <span>Have a budget below $5k/month for marketing</span>
+                  <span>Are shopping primarily on price, not on results</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-zinc-600">×</span>
