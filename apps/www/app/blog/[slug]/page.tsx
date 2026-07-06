@@ -30,7 +30,8 @@ export async function generateMetadata({
   if (!post) return {};
 
   const url = `${SITE_URL}/blog/${post.slug}`;
-  const ogImage = post.heroImage ?? "/vsc-large.png";
+  // Per-post branded OG card rendered by the og.png route handler at build time.
+  const ogImage = `${url}/og.png`;
 
   return {
     title: post.title,
@@ -47,7 +48,7 @@ export async function generateMetadata({
       modifiedTime: `${post.updatedAt ?? post.publishedAt}T00:00:00.000Z`,
       authors: [post.author],
       tags: post.tags,
-      images: [{ url: ogImage, width: 1200, height: 630, alt: post.heroImageAlt ?? post.title }],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: post.title }],
       siteName: "Viral Slice Co.",
     },
     twitter: {
@@ -82,7 +83,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
     "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
-    image: post.heroImage ? `${SITE_URL}${post.heroImage}` : `${SITE_URL}/vsc-large.png`,
+    image: post.heroImage ? `${SITE_URL}${post.heroImage}` : `${url}/og.png`,
     datePublished: `${post.publishedAt}T00:00:00.000Z`,
     dateModified: `${post.updatedAt ?? post.publishedAt}T00:00:00.000Z`,
     author: {
