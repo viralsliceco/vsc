@@ -5,11 +5,14 @@ import { Providers } from "@/components/providers"
 import { MetaPixel } from "@/components/meta-pixel"
 
 import { Analytics } from "@vercel/analytics/next"
-import { GoogleAnalytics } from "@next/third-parties/google"
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google"
 import { Metadata, Viewport } from "next"
 import { Suspense } from "react"
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID
+// Google Tag Manager container (Google Ads). Public id, so a hardcoded fallback
+// keeps the tag live even if the env var is never set on Vercel.
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-M8F7GV96"
 
 const fontSans = Geist({
   subsets: ["latin"],
@@ -173,6 +176,8 @@ export default function RootLayout({
         {/* Google Analytics 4 — only renders when NEXT_PUBLIC_GA_ID is set so
             local dev / preview deploys don't pollute production data. */}
         {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
+        {/* Google Tag Manager — loads the Google Ads tag on every page. */}
+        <GoogleTagManager gtmId={GTM_ID} />
       </body>
     </html>
   )
